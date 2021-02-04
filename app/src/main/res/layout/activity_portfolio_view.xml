@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        //하단 네비게이션바바바바바바
+        //하단 네비게이션바
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigationBar"
