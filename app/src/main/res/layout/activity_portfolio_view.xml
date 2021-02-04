@@ -18,6 +18,7 @@
             android:background="@color/black"
             app:menu="@menu/navigationbar"
             app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
             />
     </FrameLayout>
 
