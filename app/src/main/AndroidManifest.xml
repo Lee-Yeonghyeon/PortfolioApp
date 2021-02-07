@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortfolioApp">
-        <activity android:name=".WritePrizeActivity"></activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".WritePrizeActivity" />
         <activity android:name=".WriteCertificateActivity" />
         <activity android:name=".CertificateViewActivity" />
         <activity android:name=".WriteDailyPortfolioActivity" />
@@ -18,7 +19,6 @@
         <activity android:name=".PortfolioFullViewActivity" />
         <activity android:name=".PortfolioCalendarViewActivity" />
         <activity android:name=".JoinActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
