@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_addCerificate"
-        android:icon="@drawable/ic_baseline_adb_24"
+        android:icon="@drawable/icon_white_plus"
         android:title="addCertificate"
         app:showAsAction="ifRoom" />
 </menu>

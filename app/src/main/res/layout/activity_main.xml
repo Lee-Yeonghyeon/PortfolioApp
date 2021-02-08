@@ -4,22 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/gray_light">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        //하단 네비게이션바
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigationBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/black"
-            app:menu="@menu/navigationbar"
-            app:itemTextColor="@color/white"
-            app:itemIconTint="@color/white"/>
-    </FrameLayout>
+    <EditText
+        android:id="@+id/edt_loginId"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edt_white_round"
+        android:fontFamily="@font/scdream3"
+        android:hint="  아이디"
+        android:inputType="text"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/edt_loginPassword"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edt_white_round"
+        android:fontFamily="@font/scdream3"
+        android:hint="  비밀번호"
+        android:inputType="text|textPassword"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_loginId" />
+
+    <Button
+        android:id="@+id/btn_join"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/pinkbutton"
+        android:text="회원가입"
+        android:textAllCaps="false"
+        android:fontFamily="@font/scdream4"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_loginPassword" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/pinkbutton"
+        android:text="로그인"
+        android:textAllCaps="false"
+        android:fontFamily="@font/scdream4"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_join"
+        app:layout_constraintTop_toBottomOf="@+id/edt_loginPassword" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_pofo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

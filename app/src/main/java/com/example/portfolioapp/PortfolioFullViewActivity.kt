@@ -9,7 +9,7 @@ class PortfolioFullViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio_full_view)
 
-        supportActionBar?.setTitle("포트폴리오 모아보기")
+        supportActionBar?.setTitle("포트폴리오 활동별 보기")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean { //각각 포트폴리오 기록창, PortfolioFullView 창으로 이동할 수 있도록 연결해주세요(액션바에 있는 아이콘임)

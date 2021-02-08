@@ -4,36 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JoinActivity">
+    tools:context=".JoinActivity"
+    android:background="@color/gray_light">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/scdream6"
+        android:text="회원가입"
+        android:textColor="@color/pink_main"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_joinName"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edt_white_round"
+        android:fontFamily="@font/scdream3"
+        android:hint="  이름"
+        android:inputType="text"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/edt_joinId"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginStart="81dp"
-        android:layout_marginTop="248dp"
-        android:hint="아이디"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edt_white_round"
+        android:fontFamily="@font/scdream3"
+        android:hint="  아이디"
         android:inputType="text"
+        android:textSize="19sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_joinName" />
 
 
     <Button
         android:id="@+id/btn_joinIdCheck"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="80dp"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="84dp"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream3"
         android:text="중복확인"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/edt_joinId" />
 
     <EditText
         android:id="@+id/edt_joinPassword1"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="비밀번호"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edt_white_round"
+        android:fontFamily="@font/scdream3"
+        android:hint="  비밀번호"
         android:inputType="textPassword"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_joinId" />
@@ -41,9 +79,13 @@
     <EditText
         android:id="@+id/edt_joinPassword2"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="비밀번호 확인"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edt_white_round"
+        android:fontFamily="@font/scdream3"
+        android:hint="  비밀번호 확인"
         android:inputType="textPassword"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_joinPassword1" />
@@ -51,25 +93,33 @@
 
     <Button
         android:id="@+id/btn_joinBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/pinkbutton"
+        android:fontFamily="@font/scdream4"
         android:text="취소"
+        android:textAllCaps="false"
+        android:textSize="17sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_join"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_joinPassword2" />
 
     <Button
         android:id="@+id/btn_join"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/pinkbutton"
+        android:fontFamily="@font/scdream4"
         android:text="회원가입"
+        android:textAllCaps="false"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_joinBack"
         app:layout_constraintTop_toBottomOf="@+id/edt_joinPassword2" />
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
