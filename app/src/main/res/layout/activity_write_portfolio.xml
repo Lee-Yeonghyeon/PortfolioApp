@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WritePortfolioActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:columnCount="3"
+            android:rowCount="10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="center_vertical"
+                android:text="활동명"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edt_writeP_name"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_gravity="center_vertical"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_gravity="center_vertical"
+                android:text="날짜(기간)"
+                android:textSize="20sp" />
+
+            <LinearLayout>
+                <Button
+                    android:id="@+id/btn_writeP_selectDateStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="시작날짜 선택" />
+
+
+                <TextView
+                    android:id="@+id/calendarTextViewStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_row="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="7dp"
+                    android:text="시작 날짜"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_writeP_selectDateEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="2"
+                android:layout_gravity="center_vertical"
+                android:text="종료날짜 선택" />
+
+
+            <TextView
+                android:id="@+id/calendarTextViewEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="2"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="7dp"
+                android:text="종료 날짜"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:layout_gravity="center_vertical"
+                android:text="활동 종류"
+                android:textSize="20sp" />
+
+
+            <Spinner
+                android:id="@+id/spinner_writeP_sort"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="3"
+                android:layout_gravity="center_vertical"
+                android:text="활동 선택" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:layout_gravity="center_vertical"
+                android:text="활동 내용"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edt_writeP_content"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="4"
+                android:layout_gravity="center_vertical"
+                android:inputType="textImeMultiLine"
+                android:minLines="3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="5"
+                android:layout_gravity="center_vertical"
+                android:text="자료첨부"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_writeP_picture"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="5"
+                android:layout_gravity="center_vertical"
+                android:text="사진 첨부" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                app:srcCompat="@android:color/background_light"
+                android:id="@+id/imageView" />
+
+            <Button
+                android:id="@+id/btn_writeP_file"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="6"
+                android:layout_gravity="center_vertical"
+                android:text="파일 첨부" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="7"
+                android:layout_gravity="center_vertical"
+                android:text="마커색상"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/cbPink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pink"
+                android:textColor="@color/PINK" />
+
+            <Button
+                android:id="@+id/btn_writeP_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="8"
+                android:layout_columnSpan="2"
+                android:layout_gravity="center"
+                android:text="작성완료" />
+        </GridLayout>
+
+        //하단 네비게이션바
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/black"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            app:menu="@menu/navigationbar" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
