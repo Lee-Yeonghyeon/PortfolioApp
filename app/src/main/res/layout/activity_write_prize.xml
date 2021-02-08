@@ -6,173 +6,191 @@
     android:layout_height="match_parent"
     tools:context=".WritePrizeActivity">
 
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="대회명"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout3" />
+
+    <EditText
+        android:id="@+id/edt_writeP_contestName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/scdream4"
+        android:text="수상명"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <EditText
+        android:id="@+id/edt_writeP_prizeName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_contestName" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="수상날짜"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/btn_writeP_selectPeriod"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream3"
+        android:text="날짜 선택"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_prizeName" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="활동내용"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <EditText
+        android:id="@+id/edt_writeP_contents"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_selectPeriod" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="비고"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <EditText
+        android:id="@+id/edt_writeP_etc"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_contents" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="자료첨부"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <Button
+        android:id="@+id/btn_writeC_picture"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream3"
+        android:text="사진 첨부"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_etc" />
+
+    <Button
+        android:id="@+id/btn_writeC_file"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream3"
+        android:text="파일 첨부"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_writeC_picture"
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_etc" />
+
+    <Button
+        android:id="@+id/btn_writeC_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="작성완료"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream4"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_writeC_picture" />
+
     <FrameLayout
+        android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <GridLayout
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:columnCount="2"
-            android:rowCount="9">
-
-            <RadioGroup
-                android:id="@+id/btnGroup_writeP"
-                android:orientation="horizontal"
-                android:layout_column="0"
-                android:layout_row="0"
-                android:layout_columnSpan="2"
-                android:layout_gravity="center_horizontal">
-                <RadioButton
-                    android:id="@+id/btn_writeP_certificate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="자격증" />
-                <RadioButton
-                    android:id="@+id/btn_writeP_prize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="수상" />
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="1"
-                android:layout_gravity="center_vertical"
-                android:text="대회명"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/edt_writeP_contestName"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_row="1"
-                android:layout_gravity="center_vertical"
-                android:inputType="text" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="2"
-                android:layout_gravity="center_vertical"
-                android:text="수상명"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/edt_writeP_prizeName"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_row="2"
-                android:layout_gravity="center_vertical"
-                android:inputType="text" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="3"
-                android:layout_gravity="center_vertical"
-                android:text="수상날짜"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btn_writeP_selectPeriod"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_column="1"
-                android:layout_gravity="center_vertical"
-                android:text="날짜 선택" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="4"
-                android:layout_gravity="center_vertical"
-                android:text="활동내용"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/edt_writeP_contents"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_row="4"
-                android:layout_gravity="center_vertical" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="5"
-                android:layout_gravity="center_vertical"
-                android:text="비고"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/edt_writeP_etc"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_row="5"
-                android:layout_gravity="center_vertical" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="6"
-                android:layout_gravity="center_vertical"
-                android:text="자료첨부"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btn_writeC_picture"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_row="6"
-                android:layout_gravity="center_vertical"
-                android:text="사진 첨부" />
-
-            <Button
-                android:id="@+id/btn_writeC_file"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_row="7"
-                android:layout_gravity="center_vertical"
-                android:text="파일 첨부" />
-
-            <Button
-                android:id="@+id/btn_writeC_complete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="8"
-                android:layout_columnSpan="2"
-                android:layout_gravity="center"
-                android:text="작성완료" />
-        </GridLayout>
-
         //하단 네비게이션바
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigationBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@color/black"
-            app:itemTextColor="@color/white"
-            app:itemIconTint="@color/white"
+            android:background="@color/gray_light"
+            app:itemIconTint="@color/gray_dark"
+            app:itemTextColor="@color/gray_dark"
             app:menu="@menu/navigationbar" />
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
