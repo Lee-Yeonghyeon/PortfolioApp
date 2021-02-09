@@ -1,0 +1,498 @@
+[
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_gray_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\gray_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_gray_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\gray_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_certificate_view.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_certificate_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_gray_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_gray_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_pink_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_pink_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_gray_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_gray_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_edt_white_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\edt_white_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_gray_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\gray_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_calendarview.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\item_calendarview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_portfolio_full_view.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_portfolio_full_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_image_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\image_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_pofo.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable\\logo_pofo.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\font_scdream2.otf.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\font\\scdream2.otf"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_pink_arrow_left.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_pink_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_gray_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_gray_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_write_portfolio.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_write_portfolio.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_white_activity.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_white_activity.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_pink_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_pink_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigationbar.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\menu\\navigationbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_pink_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_pink_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_gray_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\gray_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_pink_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_pink_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_white_plus.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_white_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_gray_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_gray_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_pink_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_pink_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_pink_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_pink_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_edt_white_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\edt_white_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_edt_white_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\edt_white_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_edt_white_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\edt_white_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_gray_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_gray_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\menu_forfullview.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\menu\\forfullview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_pink_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_pink_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_pink_arrow_right.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_pink_arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_image_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\image_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_white_date.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_white_date.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_gray_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_gray_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_edt_white_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\edt_white_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_gray_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_gray_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_pink_arrow_right.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_pink_arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_pink_arrow_left.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_pink_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_white_date.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_white_date.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_gray_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_gray_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\font_scdream6.otf.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\font\\scdream6.otf"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_pink_arrow_left.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_pink_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_pink_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_pink_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_gray_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_gray_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_image_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\image_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_gray_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_gray_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_portfolio_view.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_portfolio_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_pink_arrow_right.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_pink_arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_pink_arrow_right.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_pink_arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_homeport.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\item_homeport.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\font_scdream3.otf.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\font\\scdream3.otf"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_pink_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_pink_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_image_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\image_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_pink_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_pink_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_white_activity.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_white_activity.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_white_activity.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_white_activity.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_homeprize.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\item_homeprize.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\font_scdream5.otf.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\font\\scdream5.otf"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_white_activity.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_white_activity.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_gray_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_gray_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_gray_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_gray_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_pink_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_pink_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_gray_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_gray_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_portfolio_calendar_view.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_portfolio_calendar_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pinkbutton.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable\\pinkbutton.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_white_plus.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_white_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_join.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_join.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_gray_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_gray_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_white_date.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_white_date.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\font_scdream4.otf.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\font\\scdream4.otf"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_write_certificate.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_write_certificate.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_white_plus.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_white_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_pink_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_pink_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_edt_white_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\edt_white_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_gray_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_gray_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_gray_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\gray_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_pink_arrow_left.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_pink_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_white_date.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_white_date.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_gray_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_gray_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\menu_forcertificateview.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\menu\\forcertificateview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_gray_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_gray_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_pink_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_pink_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_pink_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_pink_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_white_plus.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_white_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_pink_arrow_right.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\icon_pink_arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_adb_24.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable\\ic_baseline_adb_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_pink_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_pink_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_white_plus.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_white_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_white_activity.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_white_activity.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_write_prize.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\layout\\activity_write_prize.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_pink_medal.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_pink_medal.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_pink_arrow_right.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_pink_arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_pink_arrow_left.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_pink_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_white_date.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_white_date.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_icon_pink_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxhdpi\\icon_pink_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_pink_home.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_pink_home.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_white_activity.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_white_activity.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_icon_white_plus.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xhdpi\\icon_white_plus.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_icon_white_date.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\icon_white_date.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_gray_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\gray_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_icon_pink_arrow_left.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-hdpi\\icon_pink_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\menu_forcalendarview.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\menu\\forcalendarview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_image_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-xxxhdpi\\image_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_image_bar.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-ldpi\\image_bar.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon_gray_portfolio.png.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable-mdpi\\icon_gray_portfolio.png"
+    },
+    {
+        "merged": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_graybutton.xml.flat",
+        "source": "C:\\Users\\Yoon Hye Won\\Desktop\\SWU\\GURU2\\pofpApp_2\\app\\src\\main\\res\\drawable\\graybutton.xml"
+    }
+]
