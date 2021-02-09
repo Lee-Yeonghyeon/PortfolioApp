@@ -25,6 +25,8 @@ class HomeActivity: AppCompatActivity() {
     lateinit var sqlitedb: SQLiteDatabase
 
     lateinit var certificateview: TextView
+    lateinit var portfolioview: TextView
+
     lateinit var str_prizeTitle: String
     lateinit var str_prizeDate: String
 
@@ -34,12 +36,22 @@ class HomeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        certificateview = findViewById(R.id.certificateview)
+        // 리스트 속 textview 클릭시
+        certificateview = findViewById(R.id.tv_certificateview)
+        portfolioview = findViewById(R.id.tv_portfolioview)
 
         certificateview.setOnClickListener{
             val intent = Intent(this,CertificateViewActivity::class.java)
             startActivity(intent)
         }
+
+        portfolioview.setOnClickListener{
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        // 자격증/수상 요약부분
         homePortDBManager = CertificateManager(this, "certificate", null, 1)
         sqlitedb = homePortDBManager.readableDatabase
 
