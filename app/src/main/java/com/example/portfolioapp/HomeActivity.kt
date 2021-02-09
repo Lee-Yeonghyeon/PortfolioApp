@@ -1,48 +1,66 @@
 package com.example.portfolioapp
 
+import android.content.ClipData
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteQueryBuilder
 import android.os.Bundle
-import android.view.MenuItem
-import android.widget.Button
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.BaseAdapter
+import android.widget.ListView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.*
+import kotlin.collections.ArrayList
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity: AppCompatActivity() {
 
-    lateinit var certificate: Button
+    lateinit var listview: ListView
+    lateinit var homePortDBManager: CertificateManager
+    lateinit var sqlitedb: SQLiteDatabase
+
+    lateinit var str_prizeTitle: String
+    lateinit var str_prizeDate: String
+
+    var prizeList = ArrayList<ItemPrize>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        certificate = findViewById(R.id.certificate)
+        homePortDBManager = CertificateManager(this, "certificate", null, 1)
+        sqlitedb = homePortDBManager.readableDatabase
 
-        certificate.setOnClickListener{
-            val intent = Intent(this,CertificateViewActivity::class.java)
+        var cursor: Cursor
+        cursor = sqlitedb.rawQuery("SELECT * FROM certificate;", null)
+
+        while (cursor.moveToNext()) {
+            do {
+                str_prizeTitle = cursor.getString(cursor.getColumnIndex("name")).toString()
+                str_prizeDate = cursor.getString(cursor.getColumnIndex("date")).toString()
+
+                prizeList.add(ItemPrize(str_prizeTitle, str_prizeDate))
+            } while (cursor.moveToNext())
+        }
+
+        val prizeAdapter = PrizeListAdapter(this, prizeList)
+        val prizeListView = findViewById<ListView>(R.id.homeprizeListView)
+        prizeListView.adapter = prizeAdapter
+
+
+
+        // 리스트뷰 항목 클릭시
+        listview = findViewById<ListView>(R.id.homeprizeListView)
+        listview.setOnItemClickListener { parent, view, position, id ->
+            val intent = Intent(this, CertificateListActivity::class.java)
+            intent.putExtra("intent_name", str_prizeTitle)
             startActivity(intent)
         }
-        supportActionBar?.setTitle("홈")
 
-        fun onNavigationSelected(item: MenuItem): Boolean {
-            when (item.itemId) {
-                R.id.nav_portfolio -> {
-                    var intent = Intent(this, PortfolioCalendarViewActivity::class.java)
-                    startActivity(intent)
-                    return true
-                }
-                R.id.nav_home -> {
-                    var intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
-                    return true
-                }
-                R.id.nav_certificate -> {
-                    var intent = Intent(this, CertificateViewActivity::class.java)
-                    startActivity(intent)
-                    return true
-                }
-            }
-            return false
-        }
     }
 }
