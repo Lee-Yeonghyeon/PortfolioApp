@@ -134,7 +134,7 @@ class WritePortfolioActivity : AppCompatActivity() {
 
 
             //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
-            val intent = Intent(this, PortfolioViewActivity::class.java)
+            val intent = Intent(this, PortfolioCalendarViewActivity::class.java)
             intent.putExtra("intent_name", activity_name)
             startActivity(intent)
 
