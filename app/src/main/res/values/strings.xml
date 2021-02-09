@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PortfolioApp</string>
+
+    <string name="action_write_certificate">자격증 추가하기</string>
+    <string name="action_write_prize">수상경력 추가하기</string>
+    <string name="action_certificate_delete">삭제</string>
 </resources>

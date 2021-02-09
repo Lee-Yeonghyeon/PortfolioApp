@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortfolioApp">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".CertificateListActivity"></activity>
+        <activity android:name=".ReviseCertificateActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".WritePrizeActivity" />
         <activity android:name=".WriteCertificateActivity" />
         <activity android:name=".CertificateViewActivity" />

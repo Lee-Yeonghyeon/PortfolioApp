@@ -163,13 +163,13 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_writeC_picture"
         tools:srcCompat="@tools:sample/avatars" />
     <Button
-        android:id="@+id/btn_writeC_complete"
+        android:id="@+id/btn_writeC_revise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
         android:background="@drawable/graybutton"
         android:fontFamily="@font/scdream4"
-        android:text="작성완료"
+        android:text="수정완료"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
