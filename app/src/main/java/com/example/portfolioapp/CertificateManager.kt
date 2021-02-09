@@ -19,20 +19,4 @@ class CertificateManager(
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
-
-    /*
-    fun Query(
-            projection: Array<String>,
-            selection: String,
-            selectionArgs: Array<String>,
-            sorOrder: String
-    ): Cursor {
-
-        val qb = SQLiteQueryBuilder()
-        qb.tables = dbTable
-        val cursor = qb.query(sqlDB, projection, selection, selectionArgs, null, null, sorOrder)
-        return cursor
-    }
-
-     */
 }
