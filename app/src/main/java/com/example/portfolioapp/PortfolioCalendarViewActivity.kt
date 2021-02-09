@@ -1,22 +1,33 @@
 package com.example.portfolioapp
 
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.CalendarView
 import android.widget.ListView
+import android.widget.TextView
+import android.widget.Toast
+import com.example.mypart_pofo.PorflioManager
 import java.text.SimpleDateFormat
 
 class PortfolioCalendarViewActivity : AppCompatActivity() {
 
+    lateinit var calendarViewDBManager: PorflioManager
+    lateinit var sqlitedb: SQLiteDatabase
+
     lateinit var calendarView: CalendarView
-    var recordList = arrayListOf<ItemRecord>(
-            ItemRecord("GURU2 해커톤", "2021.02.01 ~ 2021.02.14", "최우수상받고싶어요"),
-            ItemRecord("00공모전", "2021.02.02 ~ 2021.02.04", "열심히하자"),
-            ItemRecord("대외활동", "2021.02.04 ~ 2021.03.17", "하하하")
-    )
+    lateinit var tvDate: TextView
+
+    lateinit var str_rTitle: String
+    lateinit var str_rStartDate: String
+    lateinit var str_rEndDate: String
+    lateinit var str_rContent: String
+
+    var recordList = ArrayList<ItemRecord>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,17 +35,44 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_portfolio_calendar_view)
 
         calendarView = findViewById<CalendarView>(R.id.calendarView)
+        tvDate = findViewById<TextView>(R.id.tv_date)
 
 
         // 캘린더뷰 최소, 최대 활성화 날짜
-        calendarView.minDate = SimpleDateFormat("yyyyMMdd").parse("20000101").time
+        //calendarView.minDate = SimpleDateFormat("yyyyMMdd").parse("20000101").time
         calendarView.maxDate = SimpleDateFormat("yyyyMMdd").parse("20991231").time
+
 
         // 캘린더뷰의 날짜를 클릭했을 때 발생될 이벤트
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            tvDate.text = "${year}년 ${month + 1}월 ${dayOfMonth}일"
 
+                            //String.format("%d / %d / %d", year, month + 1, dayOfMonth)
+                            // year.toString() + month.toString() + dayOfMonth.toString()
         }
 
+
+
+        // 달력 아래 일정 표시 부분
+        calendarViewDBManager = PorflioManager(this, "portfolio", null, 1)
+        sqlitedb = calendarViewDBManager.readableDatabase
+
+        var cursor: Cursor
+        cursor = sqlitedb.rawQuery("SELECT * FROM portfolio;", null)
+
+        while (cursor.moveToNext()) {
+            do {
+                str_rTitle = cursor.getString(cursor.getColumnIndex("name")).toString()
+                str_rStartDate = cursor.getString(cursor.getColumnIndex("startDate")).toString()
+                str_rEndDate = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
+                str_rContent = cursor.getString(cursor.getColumnIndex("content")).toString()
+
+
+                // if(str_rStartDate == tvDate.toString()) {
+                    recordList.add(ItemRecord(str_rTitle, str_rStartDate, str_rEndDate, str_rContent))
+                // }else continue
+            } while (cursor.moveToNext())
+        }
         val recordAdapter = RecordListAdapter(this, recordList)
         val recordListView = findViewById<ListView>(R.id.recordListView)
         recordListView.adapter = recordAdapter
