@@ -1,18 +1,26 @@
 package com.example.mypart_pofo
 
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 
 
 class PortfolioFullViewActivity : AppCompatActivity(){
+
+    //DB관련
+    lateinit var portfolio: PorflioManager
+    lateinit var sqlitedb: SQLiteDatabase
+    lateinit var view : RecyclerView
+    lateinit var layout: LinearLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +28,76 @@ class PortfolioFullViewActivity : AppCompatActivity(){
 
         supportActionBar?.setTitle("포트폴리오 활동별로보기")
 
+        portfolio = PorflioManager(this,"portfolio",null,1)
+        sqlitedb = portfolio.readableDatabase
+
+        layout = findViewById(R.id.portfolioAll)
+
+        var cursor : Cursor
+        cursor = sqlitedb.rawQuery("SELECT * FROM portfolio;",null)
+
+        var num: Int =0
+        while(cursor.moveToNext()){
+            var actName = cursor.getString(cursor.getColumnIndex("name")).toString()
+            var actDate_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
+            var actDate_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
+            var actSort = cursor.getString(cursor.getColumnIndex("sort")).toString()
+            var actContent = cursor.getString(cursor.getColumnIndex("content")).toString()
+            var actImage = cursor.getString(cursor.getColumnIndex("image")).toString()
+
+            var layout_item : LinearLayout = LinearLayout(this)
+            layout_item.orientation = LinearLayout.VERTICAL
+            layout_item.setPadding(20,10,20,10)
+            layout_item.id = num
+            layout_item.setTag(actName)
+
+            var tvName: TextView = TextView(this)
+            tvName.text = actName
+            tvName.textSize = 30F
+            tvName.setBackgroundColor(Color.LTGRAY)
+            layout_item.addView(tvName)
+
+            var tvDateStart : TextView = TextView(this)
+            tvDateStart.text = actDate_Start
+            layout_item.addView(tvDateStart)
+
+            var tvDateEnd : TextView = TextView(this)
+            tvDateEnd.text = actDate_End
+            layout_item.addView(tvDateEnd)
+
+            var tvSort : TextView = TextView(this)
+            tvSort.text = actSort
+            layout_item.addView(tvSort)
+
+            var tvContent : TextView = TextView(this)
+            tvContent.text = actContent
+            layout_item.addView(tvContent)
+
+            var tvImage : TextView = TextView(this)
+            tvImage.text = actImage
+            layout_item.addView(tvImage)
+
+            layout_item.setOnClickListener {
+                val intent = Intent(this,PortfolioViewActivity::class.java)
+                intent.putExtra("intent_name",actName)
+                startActivity(intent)
+            }
+
+            layout.addView(layout_item)
+            num++;
+
+        }
+
+        cursor.close()
+        sqlitedb.close()
+        portfolio.close()
+
+
+
         // Spinner 선언
         val spinner : Spinner = findViewById(R.id.spinner)
 
-        //어댑터 설정 방법1-resource-array.xml에 있는 아이템 목록을 추가한다.
-        //spinner.adapter = ArrayAdapter.createFromResource(this,R.array.list_array, android.R.layout.simple_spinner_item)
-
-        //어댑터 설정 방법2
+        //어댑터 설정
         var sData = resources.getStringArray(R.array.list_array)
         var adapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,sData)
         spinner.adapter = adapter
@@ -58,6 +129,16 @@ class PortfolioFullViewActivity : AppCompatActivity(){
             }
 
         }
+
+
+
+
+
+
+
+
+
+
 
     }
 

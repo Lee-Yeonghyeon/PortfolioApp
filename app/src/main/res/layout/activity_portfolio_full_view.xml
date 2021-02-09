@@ -42,13 +42,19 @@
         android:layout_toRightOf="@+id/sort" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/spinner"
-        android:layout_margin="20dp"
-        android:scrollbarFadeDuration="0"
-        android:scrollbarSize="5dp"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/portfolioAll"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"/>
+
+    </ScrollView>
+
+
 
     <FrameLayout
         android:layout_width="match_parent"

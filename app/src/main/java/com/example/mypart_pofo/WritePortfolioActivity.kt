@@ -39,6 +39,7 @@ class WritePortfolioActivity : AppCompatActivity() {
     lateinit var btn_writeP_complete: Button
     lateinit var imageView : ImageView
     lateinit var imageUri : Uri
+    lateinit var chPink : CheckBox
 
     //DB관련
     lateinit var portfolio: PorflioManager
@@ -66,32 +67,36 @@ class WritePortfolioActivity : AppCompatActivity() {
         btn_writeP_file = findViewById(R.id.btn_writeP_file)
         btn_writeP_complete = findViewById(R.id.btn_writeP_complete)
         imageView = findViewById(R.id.imageView)
+        chPink = findViewById(R.id.cbPink)
+
+        //chPink.setOnCheckedChangeListener(this)
+
 
         btn_writeP_picture.setOnClickListener { openGallery() }
 
 
         //spinner
-        val spinner_writeP_sort : Spinner = findViewById(R.id.spinner_writeP_sort)
+        val spinner_writeP_sort: Spinner = findViewById(R.id.spinner_writeP_sort)
 
         var sData = resources.getStringArray(R.array.list_array)
-        var adapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,sData)
+        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, sData)
         spinner_writeP_sort.adapter = adapter
 
-        spinner_writeP_sort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+        spinner_writeP_sort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 //아이템이 클릭 되면 맨 위부터 position 0번부터 순서대로 동작하게 됩니다.
-                when(position) {
-                    0   ->  "전체"
-                    1   ->  "대외활동"
-                    2   ->  "공모전"
-                    3   ->  "동아리"
-                    4   ->  "교내활동"
-                    5   ->  "기타"
+                when (position) {
+                    0 -> "전체"
+                    1 -> "대외활동"
+                    2 -> "공모전"
+                    3 -> "동아리"
+                    4 -> "교내활동"
+                    5 -> "기타"
                     else -> null
                 }
 
 
-                Toast.makeText(this@WritePortfolioActivity,adapter.getItem(position)+"선택했습니다",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@WritePortfolioActivity, adapter.getItem(position) + "선택했습니다", Toast.LENGTH_SHORT).show()
 
             }
 
@@ -127,15 +132,14 @@ class WritePortfolioActivity : AppCompatActivity() {
             var spinnerString = spinner_writeP_sort.selectedItem
             sqlitedb = portfolio.writableDatabase
             sqlitedb.execSQL(
-                "INSERT INTO portfolio VALUES ('" + activity_name + "','"
-                        + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content +"', '"+imageUri+"');")
-            Log.d("myDB","spinner: "+spinnerString)
+                    "INSERT INTO portfolio VALUES ('" + activity_name + "','"
+                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + imageUri + "');")
+            Log.d("myDB", "spinner: " + spinnerString)
             sqlitedb.close()
 
 
-
             //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
-            val intent = Intent(this, PortfolioCalendarViewActivity::class.java)
+            val intent = Intent(this, PortfolioViewActivity::class.java)
             intent.putExtra("intent_name", activity_name)
             startActivity(intent)
 
@@ -153,9 +157,9 @@ class WritePortfolioActivity : AppCompatActivity() {
             var date: Int = today.get(Calendar.DATE)
 
             var listener =
-                DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
-                    calendarTextViewStart.text = "${year}년 ${month + 1}월 ${date}일"
-                }
+                    DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
+                        calendarTextViewStart.text = "${year}년 ${month + 1}월 ${date}일"
+                    }
             var picker = DatePickerDialog(this, listener, year, month, date)
             picker.show()
         }
@@ -168,91 +172,96 @@ class WritePortfolioActivity : AppCompatActivity() {
             var date: Int = today.get(Calendar.DATE)
 
             var listener =
-                DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
-                    calendarTextViewEnd.text = "${year}년 ${month + 1}월 ${date}일"
-                }
+                    DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
+                        calendarTextViewEnd.text = "${year}년 ${month + 1}월 ${date}일"
+                    }
             var picker = DatePickerDialog(this, listener, year, month, date)
             picker.show()
         }
 
+        //체크박스 선택시 -> 색상 변경
 
-        //권한이 부여되었는지 확인인
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            ) != PackageManager.PERMISSION_GRANTED
-        )
-
-        //권한이 허용되지 않음
-            if (ActivityCompat.shouldShowRequestPermissionRationale(
-                    this,
-                    Manifest.permission.READ_EXTERNAL_STORAGE
-                )
-            ) {
-                //이전에 거부한 적이 있으면
-                var dlg = AlertDialog.Builder(this)
-                dlg.setTitle("사진 권한")
-                dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수적으로 필요합니다")
-                dlg.setPositiveButton("확인") { dialog, which ->
-                    ActivityCompat.requestPermissions(
-                        this@WritePortfolioActivity
-                        ,
-                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                        REQUEST_READ_EXTERNAL_STORAGE
-                    )
-                    dlg.setNegativeButton("취소", null)
-                    dlg.show()
+        var listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                when (buttonView.id) {
+                    R.id.cbPink -> {
+                        Toast.makeText(this, chPink.getText().toString() + " 선택", Toast.LENGTH_SHORT).show()
+                    }
+                    //나머지 색상들도....
                 }
             } else {
-                //처음 권한 요청하는 경우
-                ActivityCompat.requestPermissions(
-                    this@WritePortfolioActivity
-                    ,
-                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                    REQUEST_READ_EXTERNAL_STORAGE
-                )
-            } else {
-            //권한이 이미 허용된 경우
+                //예외처리해주기!
+                when (buttonView.id) {
+                    R.id.cbPink -> {
+                        Toast.makeText(this, chPink.getText().toString() + " 해제", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+
+           // chPink.setOnCheckedChangeListener(listener)
+
+
+            //권한이 부여되었는지 확인인
+            if (ContextCompat.checkSelfPermission(
+                            this,
+                            Manifest.permission.READ_EXTERNAL_STORAGE
+                    ) != PackageManager.PERMISSION_GRANTED
+            )
+
+            //권한이 허용되지 않음
+                if (ActivityCompat.shouldShowRequestPermissionRationale(
+                                this,
+                                Manifest.permission.READ_EXTERNAL_STORAGE
+                        )
+                ) {
+                    //이전에 거부한 적이 있으면
+                    var dlg = AlertDialog.Builder(this)
+                    dlg.setTitle("사진 권한")
+                    dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수적으로 필요합니다")
+                    dlg.setPositiveButton("확인") { dialog, which ->
+                        ActivityCompat.requestPermissions(
+                                this@WritePortfolioActivity
+                                ,
+                                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                                REQUEST_READ_EXTERNAL_STORAGE
+                        )
+                        dlg.setNegativeButton("취소", null)
+                        dlg.show()
+                    }
+                } else {
+                    //처음 권한 요청하는 경우
+                    ActivityCompat.requestPermissions(
+                            this@WritePortfolioActivity
+                            ,
+                            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                            REQUEST_READ_EXTERNAL_STORAGE
+                    )
+                } else {
+                //권한이 이미 허용된 경우
+
+            }
 
         }
 
-
-        //사진의 위치 정보
-//        val photoUri: Uri = Uri.withAppendedPath(
-//            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-//            cursor.getString(idColumnIndex)
-//        )
-//
-//        // Get location data using the Exifinterface library.
-//       // Exception occurs if ACCESS_MEDIA_LOCATION permission isn't granted.
-//        photoUri = MediaStore.setRequireOriginal(photoUri)
-//        contentResolver.openInputStream(photoUri)?.use { stream ->
-//            ExifInterface(stream).run {
-//                // If lat/long is null, fall back to the coordinates (0, 0).
-//                val latLong = latLong ?: doubleArrayOf(0.0, 0.0)
-//            }
-//        }
-
     }
+    private fun openGallery() {
 
-    private fun openGallery(){
-
-        val intent : Intent = Intent(Intent.ACTION_GET_CONTENT)
+        val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.setType("image/*")
-        startActivityForResult(intent,OPEN_GALLERY)
+        startActivityForResult(intent, OPEN_GALLERY)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
 
-        if(resultCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK) {
             if (requestCode == OPEN_GALLERY) {
                 var dataUri = data?.data
-                Log.d("myDB","url: "+dataUri)
+                Log.d("myDB", "url: " + dataUri)
                 var currentImageUrl: Uri? = data?.data
 
-                imageUri = currentImageUrl!!
+                imageUri = currentImageUrl!!    //사진 uri정보를 imageUri가 가지고 있음
 
 
                 try {
@@ -262,11 +271,12 @@ class WritePortfolioActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
-        }else {
+        } else {
             Log.d("ActivityResult", "something wrong")
         }
 
     }
+
 
 
 
