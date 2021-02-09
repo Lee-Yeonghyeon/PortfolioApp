@@ -16,7 +16,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import java.util.*
 
-class WritePrizeActivity : AppCompatActivity() {
+class RevisePrizeActivity : AppCompatActivity() {
 
     lateinit var prize: PrizeManager
     lateinit var prizesqlitedb: SQLiteDatabase
@@ -30,11 +30,12 @@ class WritePrizeActivity : AppCompatActivity() {
     lateinit var btn_writeP_picture: Button
     lateinit var prizeimg: ImageView
     lateinit var btn_writeP_file: Button
-    lateinit var btn_writeP_complete: Button
+    lateinit var btn_writeP_revise: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_write_prize)
+        setContentView(R.layout.activity_revise_prize)
+
 
         edt_writeP_contestName = findViewById(R.id.edt_writeP_contestName)
         edt_writeP_prizeName = findViewById(R.id.edt_writeP_prizeName)
@@ -45,9 +46,9 @@ class WritePrizeActivity : AppCompatActivity() {
         btn_writeP_picture = findViewById(R.id.btn_writeP_picture)
         prizeimg = findViewById(R.id.prizeimg)
         btn_writeP_file = findViewById(R.id.btn_writeP_file)
-        btn_writeP_complete = findViewById(R.id.btn_writeP_complete)
+        btn_writeP_revise = findViewById(R.id.btn_writeP_revise)
 
-        supportActionBar?.setTitle("수상내역 입력하기")
+        supportActionBar?.setTitle("수상내역 수정하기")
 
         //뒤로가기 버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -73,27 +74,29 @@ class WritePrizeActivity : AppCompatActivity() {
         btn_writeP_picture.setOnClickListener{
             openGallery()               //openGallery함수 호출
         }
-        //작성완료 클릭했을때
-        btn_writeP_complete.setOnClickListener{
+
+        //수정완료 클릭했을때
+        btn_writeP_revise.setOnClickListener{
             var str_contestname:String=edt_writeP_contestName.text.toString()
             var str_prizename:String=edt_writeP_prizeName.text.toString()
             var str_date:String=" "
             var str_contents:String=edt_writeP_contents.text.toString()
             var str_etc:String=edt_writeP_etc.text.toString()
 
-            if(edt_writeP_date.text !== null){
+            if(edt_writeP_date.text !==null){
                 str_date = edt_writeP_date.text.toString()
             }
 
             prizesqlitedb = prize.writableDatabase
-            prizesqlitedb.execSQL("INSERT INTO prize VALUES ('"+str_contestname+"','"+str_prizename+"','"+str_date+"','"+str_contents+"','"+str_etc+"');")
+            prizesqlitedb.execSQL("UPDATE prize SET prizename='"+str_prizename +"',date='" + str_date +"',contents='"
+                    +str_contents+"',etc='"+str_etc
+                    +"' WHERE name = '"+str_contestname+"';")
             prizesqlitedb.close()
 
             val intent = Intent(this,CertificateViewActivity::class.java)
             intent.putExtra("intent_name",str_contestname)
             startActivity(intent)
         }
-
     }
     private val OPEN_GALLERY = 1
 
@@ -134,5 +137,4 @@ class WritePrizeActivity : AppCompatActivity() {
             }
         }
     }
-
 }

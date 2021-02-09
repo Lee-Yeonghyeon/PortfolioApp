@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
-        android:id="@+id/btn_writeP_selectPeriod"
+        android:id="@+id/btn_writeP_date"
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -78,6 +78,14 @@
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/edt_writeP_prizeName" />
+
+    <TextView
+        android:id="@+id/edt_writeP_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2XXX-XX-XX"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_writeP_date"
+        app:layout_constraintStart_toEndOf="@+id/btn_writeP_date" />
 
     <TextView
         android:id="@+id/textView13"
@@ -99,7 +107,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_selectPeriod" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_date" />
 
     <TextView
         android:id="@+id/textView14"
@@ -137,7 +145,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <Button
-        android:id="@+id/btn_writeC_picture"
+        android:id="@+id/btn_writeP_picture"
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -150,7 +158,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_writeP_etc" />
 
     <Button
-        android:id="@+id/btn_writeC_file"
+        android:id="@+id/btn_writeP_file"
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -159,21 +167,34 @@
         android:fontFamily="@font/scdream3"
         android:text="파일 첨부"
         android:textSize="13sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_writeC_picture"
+        app:layout_constraintStart_toEndOf="@+id/btn_writeP_picture"
         app:layout_constraintTop_toBottomOf="@+id/edt_writeP_etc" />
-
-    <Button
-        android:id="@+id/btn_writeC_complete"
+    <ImageView
+        android:id="@+id/prizeimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_writeP_complete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_picture"
+        tools:srcCompat="@tools:sample/avatars" />
+    <Button
+        android:id="@+id/btn_writeP_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
         android:text="작성완료"
         android:background="@drawable/graybutton"
         android:fontFamily="@font/scdream4"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeC_picture" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_picture" />
 
     <FrameLayout
         android:id="@+id/frameLayout3"

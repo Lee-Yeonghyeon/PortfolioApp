@@ -13,12 +13,12 @@ import android.widget.TextView
 class CertificateViewActivity : AppCompatActivity() {
 
     lateinit var certificate: CertificateManager
-    //lateinit var prize: PrizeManager
+    lateinit var prize: PrizeManager
 
     lateinit var certificatesqlitedb: SQLiteDatabase        //certificatedb연동
-    lateinit var prizesqlitedb: SQLiteDatabase              //certificatedb연동
+    lateinit var prizesqlitedb: SQLiteDatabase              //prizedb연동
 
-    lateinit var layout: LinearLayout                       //certificate layout
+    lateinit var certificatelayout: LinearLayout            //certificate layout
     lateinit var prizelayout: LinearLayout                  //prize layout
 
 
@@ -33,25 +33,29 @@ class CertificateViewActivity : AppCompatActivity() {
         supportActionBar?.setTitle("자격증/수상경력")
 
         //certificate 보여주기
-        certificate = CertificateManager(this,"certificate",null,1)
+        certificate = CertificateManager(this, "certificate", null, 1)
         certificatesqlitedb = certificate.readableDatabase
 
-        layout = findViewById(R.id.certificate)
+        certificatelayout = findViewById(R.id.certificate)
 
-        var certificateCursor:Cursor
-        certificateCursor = certificatesqlitedb.rawQuery("SELECT * FROM certificate;",null)
+        var certificateCursor: Cursor
+        certificateCursor = certificatesqlitedb.rawQuery("SELECT * FROM certificate;", null)
 
-        var certificatenum:Int=0
+        var certificatenum: Int = 0
 
-        while(certificateCursor.moveToNext()){
-            var str_name = certificateCursor.getString(certificateCursor.getColumnIndex("name")).toString()
-            var str_date = certificateCursor.getString(certificateCursor.getColumnIndex("date")).toString()
-            var str_period = certificateCursor.getString(certificateCursor.getColumnIndex("period")).toString()
-            var str_etc = certificateCursor.getString(certificateCursor.getColumnIndex("etc")).toString()
+        while (certificateCursor.moveToNext()) {
+            var str_name =
+                certificateCursor.getString(certificateCursor.getColumnIndex("name")).toString()
+            var str_date =
+                certificateCursor.getString(certificateCursor.getColumnIndex("date")).toString()
+            var str_period =
+                certificateCursor.getString(certificateCursor.getColumnIndex("period")).toString()
+            var str_etc =
+                certificateCursor.getString(certificateCursor.getColumnIndex("etc")).toString()
 
             var layout_item: LinearLayout = LinearLayout(this)
             layout_item.orientation = LinearLayout.VERTICAL
-            layout_item.id=certificatenum
+            layout_item.id = certificatenum
 
             //우선 제목만 보여주고
             var tvName: TextView = TextView(this)
@@ -61,13 +65,13 @@ class CertificateViewActivity : AppCompatActivity() {
 
 
             //제목 클릭하면 상세화면으로 넘어가기
-            layout_item.setOnClickListener{
-                val intent = Intent(this,CertificateListActivity::class.java)
-                intent.putExtra("intent_name",str_name)
+            layout_item.setOnClickListener {
+                val intent = Intent(this, CertificateListActivity::class.java)
+                intent.putExtra("intent_name", str_name)
                 startActivity(intent)
             }
 
-            layout.addView(layout_item)
+            certificatelayout.addView(layout_item)
             certificatenum++
         }
 
@@ -75,8 +79,51 @@ class CertificateViewActivity : AppCompatActivity() {
         certificatesqlitedb.close()
         certificate.close()
 
-    }
 
+        //prize 보여주기
+        prize = PrizeManager(this, "prize", null, 1)
+        prizesqlitedb = prize.readableDatabase
+
+        prizelayout = findViewById(R.id.prize)
+
+        var prizecursor: Cursor
+        prizecursor = prizesqlitedb.rawQuery("SELECT * FROM prize;", null)
+
+        var prizenum: Int = 0
+
+        while (prizecursor.moveToNext()) {
+            var str_contestname = prizecursor.getString(prizecursor.getColumnIndex("name")).toString()
+            var str_prizename =prizecursor.getString(prizecursor.getColumnIndex("prizename")).toString()
+            var str_prizedate = prizecursor.getString(prizecursor.getColumnIndex("date")).toString()
+            var str_prizecontents = prizecursor.getString(prizecursor.getColumnIndex("contents")).toString()
+            var str_prizeetc = prizecursor.getString(prizecursor.getColumnIndex("etc")).toString()
+
+            var prize_layout_item: LinearLayout = LinearLayout(this)
+            prize_layout_item.orientation = LinearLayout.VERTICAL
+            prize_layout_item.id = prizenum
+
+            //우선 제목만 보여주고
+            var tvContestName: TextView = TextView(this)
+            tvContestName.text = str_contestname
+            tvContestName.textSize = 30f
+            prize_layout_item.addView(tvContestName)
+
+            //제목 클릭하면 상세화면으로 넘어가기
+            prize_layout_item.setOnClickListener {
+                val intent = Intent(this, PrizeListActivity::class.java)
+                intent.putExtra("intent_name", str_contestname)
+                startActivity(intent)
+            }
+
+            prizelayout.addView(prize_layout_item)
+            prizenum++
+        }
+
+        prizecursor.close()
+        prizesqlitedb.close()
+        prize.close()
+
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_certificate_view,menu)

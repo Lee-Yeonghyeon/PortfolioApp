@@ -19,7 +19,6 @@ class CertificateListActivity : AppCompatActivity() {
     lateinit var tvCertificateDate: TextView
     lateinit var tvCertificatePeriod: TextView
     lateinit var tvCertificateEtc: TextView
-    lateinit var tvCertificateImg: ImageView
 
     lateinit var str_certificatename: String
     lateinit var str_certificatedate: String
