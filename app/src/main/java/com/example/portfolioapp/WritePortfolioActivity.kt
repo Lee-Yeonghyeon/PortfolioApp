@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.core.app.ActivityCompat
@@ -63,6 +64,10 @@ class WritePortfolioActivity : AppCompatActivity() {
         btn_writeP_complete = findViewById(R.id.btn_writeP_complete)
         imageView = findViewById(R.id.imageView)
         chPink = findViewById(R.id.cbPink)
+
+        //뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
 
         //chPink.setOnCheckedChangeListener(this)
 
@@ -271,7 +276,18 @@ class WritePortfolioActivity : AppCompatActivity() {
         }
 
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            android.R.id.home ->{
+                val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else->{
+                return super.onOptionsItemSelected(item)
+            }
+        }
+    }
 
 }
 

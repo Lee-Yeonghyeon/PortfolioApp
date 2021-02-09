@@ -30,6 +30,10 @@ class PortfolioFullViewActivity : AppCompatActivity(){
 
         supportActionBar?.setTitle("포트폴리오 활동별로보기")
 
+        //뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+
         portfolio = PorflioManager(this,"portfolio",null,1)
         sqlitedb = portfolio.readableDatabase
 
@@ -151,6 +155,11 @@ class PortfolioFullViewActivity : AppCompatActivity(){
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
+            android.R.id.home ->{
+                val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+                startActivity(intent)
+                return true
+            }
             R.id.addPortfolio -> {
                 val intent = Intent(this,WritePortfolioActivity::class.java)
                 startActivity(intent)

@@ -98,7 +98,7 @@ class WriteCertificateActivity : AppCompatActivity() {
 
     private fun openGallery(){
         val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.setType("image/*")
+        intent.setType("images/*")
         startActivityForResult(intent,OPEN_GALLERY)
     }
     @Override

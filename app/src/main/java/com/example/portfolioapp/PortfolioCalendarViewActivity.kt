@@ -23,7 +23,15 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio_calendar_view)
 
+        supportActionBar?.setTitle("포트폴리오 월별보기")
+
+
         calendarView = findViewById<CalendarView>(R.id.calendarView)
+
+        //뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+
 
 
         // 캘린더뷰 최소, 최대 활성화 날짜
@@ -52,6 +60,11 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
     // 메뉴 클릭, 액티비티 전환
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
+            android.R.id.home ->{
+                val intent = Intent(this,HomeActivity::class.java)
+                startActivity(intent)
+                return true
+            }
             R.id.action_write_portfolio -> {
                 val intent = Intent(this, WritePortfolioActivity::class.java)
                 startActivity(intent)
@@ -65,4 +78,5 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
