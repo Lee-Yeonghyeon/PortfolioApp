@@ -4,4 +4,6 @@
     <string name="action_write_certificate">자격증 추가하기</string>
     <string name="action_write_prize">수상경력 추가하기</string>
     <string name="action_certificate_delete">삭제</string>
+    <string name="action_write_portfolio">action_write_portfolio</string>
+    <string name="action_portfullview">action_portfullview</string>
 </resources>

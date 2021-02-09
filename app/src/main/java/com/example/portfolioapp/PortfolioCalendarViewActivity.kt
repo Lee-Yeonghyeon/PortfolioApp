@@ -7,8 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.CalendarView
 import android.widget.ListView
-import com.example.mypart_pofo.PortfolioFullViewActivity
-import com.example.mypart_pofo.WritePortfolioActivity
 import java.text.SimpleDateFormat
 
 class PortfolioCalendarViewActivity : AppCompatActivity() {
@@ -53,14 +51,16 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
 
     // 메뉴 클릭, 액티비티 전환
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.id.addPortfolio -> {
-                val intentWrite = Intent(this, WritePortfolioActivity::class.java)
-                startActivity(intentWrite)
+        when(item?.itemId){
+            R.id.action_write_portfolio -> {
+                val intent = Intent(this, WritePortfolioActivity::class.java)
+                startActivity(intent)
+                return true
             }
-            R.id.moveFullView -> {
-                val intentCollection = Intent(this, PortfolioFullViewActivity::class.java)
-                startActivity(intentCollection)
+            R.id.action_portfullview-> {
+                val intent = Intent(this,PortfolioFullViewActivity::class.java)
+                startActivity(intent)
+                return true
             }
         }
         return super.onOptionsItemSelected(item)

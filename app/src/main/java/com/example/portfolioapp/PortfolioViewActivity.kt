@@ -1,4 +1,4 @@
-package com.example.mypart_pofo
+package com.example.portfolioapp
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
-import com.example.portfolioapp.R
+import com.example.mypart_pofo.PorflioManager
 
 class PortfolioViewActivity : AppCompatActivity(){
 

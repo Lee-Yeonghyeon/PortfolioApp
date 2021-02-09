@@ -1,16 +1,12 @@
-package com.example.mypart_pofo
+package com.example.portfolioapp
 
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,10 +15,8 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.app.ActivityCompat
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.core.content.ContextCompat
-import com.example.portfolioapp.R
-import java.io.ByteArrayOutputStream
+import com.example.mypart_pofo.PorflioManager
 import java.lang.Exception
 import java.util.*
 
@@ -133,8 +127,8 @@ class WritePortfolioActivity : AppCompatActivity() {
             var spinnerString = spinner_writeP_sort.selectedItem
             sqlitedb = portfolio.writableDatabase
             sqlitedb.execSQL(
-                    "INSERT INTO portfolio VALUES ('" + activity_name + "','"
-                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + imageUri + "');")
+                "INSERT INTO portfolio VALUES ('" + activity_name + "','"
+                        + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + imageUri + "');")
             Log.d("myDB", "spinner: " + spinnerString)
             sqlitedb.close()
 
@@ -158,9 +152,9 @@ class WritePortfolioActivity : AppCompatActivity() {
             var date: Int = today.get(Calendar.DATE)
 
             var listener =
-                    DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
-                        calendarTextViewStart.text = "${year}년 ${month + 1}월 ${date}일"
-                    }
+                DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
+                    calendarTextViewStart.text = "${year}년 ${month + 1}월 ${date}일"
+                }
             var picker = DatePickerDialog(this, listener, year, month, date)
             picker.show()
         }
@@ -173,9 +167,9 @@ class WritePortfolioActivity : AppCompatActivity() {
             var date: Int = today.get(Calendar.DATE)
 
             var listener =
-                    DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
-                        calendarTextViewEnd.text = "${year}년 ${month + 1}월 ${date}일"
-                    }
+                DatePickerDialog.OnDateSetListener { view: DatePicker?, year, month, date ->
+                    calendarTextViewEnd.text = "${year}년 ${month + 1}월 ${date}일"
+                }
             var picker = DatePickerDialog(this, listener, year, month, date)
             picker.show()
         }
@@ -199,21 +193,21 @@ class WritePortfolioActivity : AppCompatActivity() {
                 }
             }
 
-           // chPink.setOnCheckedChangeListener(listener)
+            // chPink.setOnCheckedChangeListener(listener)
 
 
             //권한이 부여되었는지 확인인
             if (ContextCompat.checkSelfPermission(
-                            this,
-                            Manifest.permission.READ_EXTERNAL_STORAGE
-                    ) != PackageManager.PERMISSION_GRANTED
+                    this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ) != PackageManager.PERMISSION_GRANTED
             )
 
             //권한이 허용되지 않음
                 if (ActivityCompat.shouldShowRequestPermissionRationale(
-                                this,
-                                Manifest.permission.READ_EXTERNAL_STORAGE
-                        )
+                        this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    )
                 ) {
                     //이전에 거부한 적이 있으면
                     var dlg = AlertDialog.Builder(this)
@@ -221,10 +215,10 @@ class WritePortfolioActivity : AppCompatActivity() {
                     dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수적으로 필요합니다")
                     dlg.setPositiveButton("확인") { dialog, which ->
                         ActivityCompat.requestPermissions(
-                                this@WritePortfolioActivity
-                                ,
-                                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                                REQUEST_READ_EXTERNAL_STORAGE
+                            this@WritePortfolioActivity
+                            ,
+                            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                            REQUEST_READ_EXTERNAL_STORAGE
                         )
                         dlg.setNegativeButton("취소", null)
                         dlg.show()
@@ -232,10 +226,10 @@ class WritePortfolioActivity : AppCompatActivity() {
                 } else {
                     //처음 권한 요청하는 경우
                     ActivityCompat.requestPermissions(
-                            this@WritePortfolioActivity
-                            ,
-                            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                            REQUEST_READ_EXTERNAL_STORAGE
+                        this@WritePortfolioActivity
+                        ,
+                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                        REQUEST_READ_EXTERNAL_STORAGE
                     )
                 } else {
                 //권한이 이미 허용된 경우
@@ -279,14 +273,6 @@ class WritePortfolioActivity : AppCompatActivity() {
     }
 
 
-
-
-
 }
-
-
-   
-
-
 
 
