@@ -24,6 +24,7 @@ class HomeActivity: AppCompatActivity() {
     lateinit var homePortDBManager: CertificateManager
     lateinit var sqlitedb: SQLiteDatabase
 
+    lateinit var certificateview: TextView
     lateinit var str_prizeTitle: String
     lateinit var str_prizeDate: String
 
@@ -33,6 +34,12 @@ class HomeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        certificateview = findViewById(R.id.certificateview)
+
+        certificateview.setOnClickListener{
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
         homePortDBManager = CertificateManager(this, "certificate", null, 1)
         sqlitedb = homePortDBManager.readableDatabase
 
