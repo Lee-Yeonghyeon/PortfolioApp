@@ -1,5 +1,6 @@
 package com.example.portfolioapp
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -18,5 +19,8 @@ class CertificateManager(
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        db!!.execSQL("DROP TABLE IF EXISTS certificate")
+        onCreate(db)
     }
+
 }

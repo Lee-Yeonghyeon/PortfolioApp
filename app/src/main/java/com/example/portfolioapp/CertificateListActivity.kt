@@ -5,6 +5,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
@@ -85,6 +86,8 @@ class CertificateListActivity : AppCompatActivity() {
                 val intent = Intent(this,ReviseCertificateActivity::class.java)
                 startActivity(intent)
                 return true
+
+               // gotoUpdate()
             }
             android.R.id.home -> {
                 val intent = Intent(this, CertificateViewActivity::class.java)
@@ -96,4 +99,8 @@ class CertificateListActivity : AppCompatActivity() {
             }
         }
     }
+    /*fun gotoUpdate(note: ContactsContract.CommonDataKinds.Note){
+        val intent = Intent(this,ReviseCertificateActivity::class.java)
+        intent.putExtra("tvCertificateName",CertificateManager.str_certificatename)
+    }*/
 }

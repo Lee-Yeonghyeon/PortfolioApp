@@ -84,7 +84,7 @@ class ReviseCertificateActivity : AppCompatActivity() {
                 str_date = edt_writeC_date.text.toString()
             }
 
-            certificatesqlitedb = certificate.readableDatabase
+            certificatesqlitedb = certificate.writableDatabase
             certificatesqlitedb.execSQL(
                 "UPDATE certificate SET date='" + str_date + "', period='"
                         + str_period + "',etc='" + str_etc
@@ -95,8 +95,11 @@ class ReviseCertificateActivity : AppCompatActivity() {
             val intent = Intent(this, CertificateViewActivity::class.java)
             intent.putExtra("intent_name", str_name)
             startActivity(intent)
+
+
         }
     }
+
     private val OPEN_GALLERY = 1
 
     private fun openGallery(){
@@ -123,6 +126,7 @@ class ReviseCertificateActivity : AppCompatActivity() {
             Log.d("ActivityResult","sth wrong")
         }
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
