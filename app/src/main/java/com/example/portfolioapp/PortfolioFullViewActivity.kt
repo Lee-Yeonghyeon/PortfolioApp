@@ -23,10 +23,18 @@ class PortfolioFullViewActivity : AppCompatActivity(){
     lateinit var view : RecyclerView
     lateinit var layout: LinearLayout
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio_full_view)
+
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
 
         supportActionBar?.setTitle("포트폴리오 활동별로보기")
 
@@ -34,6 +42,20 @@ class PortfolioFullViewActivity : AppCompatActivity(){
         sqlitedb = portfolio.readableDatabase
 
         layout = findViewById(R.id.portfolioAll)
+
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
+
 
         var cursor : Cursor
         cursor = sqlitedb.rawQuery("SELECT * FROM portfolio;",null)

@@ -31,6 +31,10 @@ class WriteCertificateActivity : AppCompatActivity() {
     lateinit var btn_writeC_file: Button
     lateinit var btn_writeC_complete: Button
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -46,11 +50,28 @@ class WriteCertificateActivity : AppCompatActivity() {
         btn_writeC_file = findViewById(R.id.btn_writeC_file)
         btn_writeC_complete = findViewById(R.id.btn_writeC_complete)
 
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
+
         supportActionBar?.setTitle("자격증 입력하기")
 
         //뒤로가기 버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
 
         //날짜선택 클릭했을때
         btn_writeC_selectDate.setOnClickListener{

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,16 +11,19 @@
     <LinearLayout
         android:id="@+id/certificate"
         android:layout_width="350dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="40dp"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="#DFA4A4"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingTop="10dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp">
-    </LinearLayout>
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
     <LinearLayout
         android:id="@+id/prize"
@@ -33,9 +36,33 @@
         android:paddingLeft="16dp"
         android:paddingTop="10dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp">
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/certificate"></LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/nav_portfolio"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_portfolio_gray" />
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_home_gray" />
+
+        <ImageView
+            android:id="@+id/nav_certificate"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_certificate_pink" />
     </LinearLayout>
-    \
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

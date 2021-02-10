@@ -18,7 +18,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edt_writeP_contestName"
@@ -183,35 +183,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_writeP_picture"
         tools:srcCompat="@tools:sample/avatars" />
+
     <Button
         android:id="@+id/btn_writeP_complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:text="작성완료"
+        android:layout_marginTop="140dp"
         android:background="@drawable/graybutton"
         android:fontFamily="@font/scdream4"
+        android:text="작성완료"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_writeP_picture" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout3"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        //하단 네비게이션바
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigationBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/gray_light"
-            app:itemIconTint="@color/gray_dark"
-            app:itemTextColor="@color/gray_dark"
-            app:menu="@menu/navigationbar" />
+        <ImageView
+            android:id="@+id/nav_portfolio"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_portfolio_gray" />
 
-    </FrameLayout>
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_home_gray" />
+
+        <ImageView
+            android:id="@+id/nav_certificate"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_certificate_pink" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

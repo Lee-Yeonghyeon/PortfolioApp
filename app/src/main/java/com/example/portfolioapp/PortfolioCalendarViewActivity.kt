@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.CalendarView
-import android.widget.ListView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.mypart_pofo.PorflioManager
 import java.text.SimpleDateFormat
 
@@ -27,6 +24,10 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
     lateinit var str_rEndDate: String
     lateinit var str_rContent: String
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
     var recordList = ArrayList<ItemRecord>()
 
 
@@ -37,6 +38,22 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
         calendarView = findViewById<CalendarView>(R.id.calendarView)
         tvDate = findViewById<TextView>(R.id.tv_date)
 
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
+
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
 
         // 캘린더뷰 최소, 최대 활성화 날짜
         //calendarView.minDate = SimpleDateFormat("yyyyMMdd").parse("20000101").time

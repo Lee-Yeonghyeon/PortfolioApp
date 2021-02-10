@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 
 class PrizeListActivity : AppCompatActivity() {
@@ -26,6 +27,10 @@ class PrizeListActivity : AppCompatActivity() {
     lateinit var str_prizecontents: String
     lateinit var str_prizeetc: String
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prize_list)
@@ -39,6 +44,24 @@ class PrizeListActivity : AppCompatActivity() {
         tvPrizeDate = findViewById(R.id.prizedate)
         tvPrizeContents = findViewById(R.id.prizecontents)
         tvPrizeEtc = findViewById(R.id.prizeetc)
+
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
+
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val intent = intent
         str_contestname = intent.getStringExtra("intent_name").toString()

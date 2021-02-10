@@ -10,10 +10,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.BaseAdapter
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mypart_pofo.PorflioManager
 import java.util.*
@@ -37,6 +34,11 @@ class HomeActivity: AppCompatActivity() {
     lateinit var str_portendDate : String
     lateinit var str_portContent: String
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
+
     var prizeList = ArrayList<ItemPrize>()
     var portList = ArrayList<ItemPort>()
 
@@ -44,21 +46,35 @@ class HomeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
-
         // 리스트 속 textview 클릭시
         certificateview = findViewById(R.id.tv_certificateview)
         portfolioview = findViewById(R.id.tv_portfolioview)
+
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
 
         certificateview.setOnClickListener{
             val intent = Intent(this,CertificateViewActivity::class.java)
             startActivity(intent)
         }
-
         portfolioview.setOnClickListener{
             val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
             startActivity(intent)
         }
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
 

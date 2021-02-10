@@ -37,6 +37,10 @@ class WritePortfolioActivity : AppCompatActivity() {
     lateinit var imageUri : String
     lateinit var chPink : CheckBox
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
     //DB관련
     lateinit var portfolio: PorflioManager
     lateinit var sqlitedb: SQLiteDatabase
@@ -65,7 +69,24 @@ class WritePortfolioActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         chPink = findViewById(R.id.cbPink)
 
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
+
         //chPink.setOnCheckedChangeListener(this)
+
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
 
 
         btn_writeP_picture.setOnClickListener { openGallery() }

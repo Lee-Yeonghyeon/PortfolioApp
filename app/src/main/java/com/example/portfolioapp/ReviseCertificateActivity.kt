@@ -32,6 +32,10 @@ class ReviseCertificateActivity : AppCompatActivity() {
     lateinit var btn_writeC_file: Button
     lateinit var btn_writeC_revise: Button
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_revise_certificate)
@@ -46,7 +50,25 @@ class ReviseCertificateActivity : AppCompatActivity() {
         btn_writeC_file = findViewById(R.id.btn_writeC_file)
         btn_writeC_revise = findViewById(R.id.btn_writeC_revise)
 
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
+
         supportActionBar?.setTitle("자격증 수정하기")
+
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
+
 
         //뒤로가기 버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -5,75 +5,121 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="100dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:paddingTop="80dp"
     tools:context=".CertificateListActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
-            android:layout_width="70sp"
+            android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:text="자격증 이름"/>
+            android:text="자격증 이름"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/certificatename"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
-            android:layout_width="70sp"
+            android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:text="취득날짜"/>
+            android:text="취득날짜"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/certificatedate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
-            android:layout_width="70sp"
+            android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:text="유효기간"/>
+            android:text="유효기간"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/certificateperiod"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
-            android:layout_width="70sp"
+            android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:text="비고"/>
+            android:text="비고"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/certificateetc"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
-            android:layout_width="70sp"
+            android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:text="활동사진"/>
+            android:text="활동사진"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <ImageView
             android:id="@+id/certificateimg"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/nav_portfolio"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_portfolio_gray" />
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_home_gray" />
+
+        <ImageView
+            android:id="@+id/nav_certificate"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_certificate_pink" />
     </LinearLayout>
 </LinearLayout>
