@@ -26,6 +26,7 @@
         android:layout_below="@+id/text1"
         android:padding="15dp"
         android:layout_margin="5dp"
+        android:layout_marginLeft="50dp"
         android:textSize="20sp" />
 
     //스피너
@@ -42,18 +43,17 @@
         android:layout_toRightOf="@+id/sort" />
 
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/item_border"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="70dp" >
 
-        <LinearLayout
-            android:id="@+id/portfolioAll"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="vertical"/>
-
-    </ScrollView>
-
+    </androidx.recyclerview.widget.RecyclerView>
 
 
     <FrameLayout
@@ -73,7 +73,14 @@
             app:itemTextColor="@color/white"
             app:menu="@menu/navigationbar" />
 
+
     </FrameLayout>
 
-
 </RelativeLayout>
+
+
+
+
+
+
+
