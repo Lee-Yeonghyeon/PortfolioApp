@@ -98,6 +98,7 @@ class CertificateListActivity : AppCompatActivity() {
 
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data =Uri.parse("https://github.com/Lee-Yeonghyeon/PortfolioApp/tree/master")
+            //intent.data = Uri.parse(tvCertificateGit.text.toString())
             if(intent.resolveActivity(packageManager) != null){
                 startActivity(intent)
             }
@@ -124,6 +125,7 @@ class CertificateListActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_certificate_revise ->{
+
                 val intent = Intent(this,ReviseCertificateActivity::class.java)
                 startActivity(intent)
                 return true
