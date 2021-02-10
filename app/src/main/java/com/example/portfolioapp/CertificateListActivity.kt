@@ -92,6 +92,7 @@ class CertificateListActivity : AppCompatActivity() {
         tvCertificateEtc.text = str_certificateetc
         tvCertificateGit.text = str_certificategit
 
+
         //깃 주소로 가기(인터넷 주소 연결)
         tvCertificateGit.setOnClickListener{
 
