@@ -81,7 +81,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/btn_writeC_selectDate" />
@@ -99,15 +99,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
+
     <EditText
         android:id="@+id/edt_writeC_etc"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/edt_writeC_selectPeriod" />
-
 
     <TextView
         android:id="@+id/textView20"
@@ -135,44 +135,54 @@
         app:layout_constraintStart_toEndOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/edt_writeC_etc" />
 
-    <Button
-        android:id="@+id/btn_writeC_file"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
+    <TextView
+        android:id="@+id/textView99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="깃 url"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <EditText
+        android:id="@+id/edt_writeC_git"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/graybutton"
-        android:fontFamily="@font/scdream3"
-        android:text="파일 첨부"
-        android:textSize="13sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_writeC_picture"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeC_etc" />
+        app:layout_constraintStart_toEndOf="@+id/textView99"
+        app:layout_constraintTop_toBottomOf="@+id/btn_writeC_picture" />
+
+
     <ImageView
         android:id="@+id/certificateimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:maxHeight="100dp"
-        android:maxWidth="100dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/btn_writeC_complete"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeC_picture"
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeC_git"
         tools:srcCompat="@tools:sample/avatars" />
+
     <Button
         android:id="@+id/btn_writeC_complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
         android:background="@drawable/graybutton"
         android:fontFamily="@font/scdream4"
+        android:layout_marginTop="20dp"
         android:text="작성완료"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeC_picture" />
+        app:layout_constraintTop_toBottomOf="@+id/certificateimg" />
 
     <LinearLayout
         android:layout_width="match_parent"

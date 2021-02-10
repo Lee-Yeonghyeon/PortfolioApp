@@ -75,7 +75,7 @@ class PrizeListActivity : AppCompatActivity() {
         if (cursor.moveToNext()) {
             str_prizename = cursor.getString((cursor.getColumnIndex("prizename"))).toString()
             str_prizedate = cursor.getString((cursor.getColumnIndex("date"))).toString()
-            str_prizecontents = cursor.getInt(cursor.getColumnIndex("contents")).toString()
+            str_prizecontents = cursor.getString(cursor.getColumnIndex("contents")).toString()
             str_prizeetc = cursor.getString((cursor.getColumnIndex("etc"))).toString()
         }
 
