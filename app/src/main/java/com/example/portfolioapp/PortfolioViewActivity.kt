@@ -33,8 +33,6 @@ class PortfolioViewActivity : AppCompatActivity(){
     lateinit var btn_viewP_modify : Button
     lateinit var btn_viewP_delete : Button
 
-
-
     lateinit var str_actName : String
     lateinit var str_actDay_Start : String
     lateinit var str_actDay_End : String
@@ -42,8 +40,9 @@ class PortfolioViewActivity : AppCompatActivity(){
     lateinit var str_actContent : String
     lateinit var str_image : String
 
-
-
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +62,22 @@ class PortfolioViewActivity : AppCompatActivity(){
         btn_viewP_modify = findViewById(R.id.btn_viewP_modify)
         btn_viewP_delete = findViewById(R.id.btn_viewP_delete)
 
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
 
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
 
 
         val intent= intent

@@ -33,8 +33,7 @@
         <ListView
             android:id="@+id/homeportListView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ListView>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -68,22 +67,29 @@
 
     </LinearLayout>
 
-    <FrameLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/nav_portfolio"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_portfolio_gray" />
 
-        //하단 네비게이션바
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigationBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/gray_light"
-            app:menu="@menu/navigationbar"
-            app:itemTextColor="@color/gray_dark"
-            app:itemIconTint="@color/gray_dark"
-            />
-    </FrameLayout>
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_home_pink" />
+
+        <ImageView
+            android:id="@+id/nav_certificate"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_certificate_gray" />
+
+    </LinearLayout>
 
 </LinearLayout>

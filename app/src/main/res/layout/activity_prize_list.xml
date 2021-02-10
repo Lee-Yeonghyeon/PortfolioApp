@@ -5,77 +5,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="100dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:paddingTop="80dp"
     tools:context=".PrizeListActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
             android:layout_width="70sp"
             android:layout_height="wrap_content"
-            android:text="대회명"/>
+            android:text="대회명"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/contestname"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
             android:layout_width="70sp"
             android:layout_height="wrap_content"
-            android:text="수상명"/>
+            android:text="수상명"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/prizename"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
             android:layout_width="70sp"
             android:layout_height="wrap_content"
-            android:text="수상날짜"/>
+            android:text="수상날짜"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/prizedate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
             android:layout_width="70sp"
             android:layout_height="wrap_content"
-            android:text="활동내용"/>
+            android:text="활동내용"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/prizecontents"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingLeft="16dp">
         <TextView
             android:layout_width="70sp"
             android:layout_height="wrap_content"
-            android:text="비고"/>
+            android:text="비고"
+            android:fontFamily="@font/scdream4"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/prizeetc"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/nav_portfolio"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_portfolio_gray" />
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_home_gray" />
+
+        <ImageView
+            android:id="@+id/nav_certificate"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_certificate_pink" />
     </LinearLayout>
 
 </LinearLayout>

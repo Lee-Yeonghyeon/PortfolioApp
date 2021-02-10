@@ -17,7 +17,8 @@ class RecordListAdapter (val context: Context, val recordList: ArrayList<ItemRec
 
 
         val tv_record_title = view.findViewById<TextView>(R.id.tv_record_title)
-        val tv_record_date = view.findViewById<TextView>(R.id.tv_record_date)
+        val tv_record_startdate = view.findViewById<TextView>(R.id.tv_record_startdate)
+        val tv_record_enddate = view.findViewById<TextView>(R.id.tv_record_enddate)
         val tv_record_content = view.findViewById<TextView>(R.id.tv_record_content)
 
 
@@ -25,7 +26,8 @@ class RecordListAdapter (val context: Context, val recordList: ArrayList<ItemRec
         // ArrayList<record>의 변수 record의 데이터를 textview에 담기
         val itemRecord = recordList[position]
         tv_record_title.text = itemRecord.r_title
-        tv_record_date.text = itemRecord.r_date
+        tv_record_startdate.text = itemRecord.r_startdate
+        tv_record_enddate.text = itemRecord.r_enddate
         tv_record_content.text = itemRecord.r_content
 
         return view

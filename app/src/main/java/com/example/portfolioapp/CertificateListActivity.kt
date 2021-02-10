@@ -26,6 +26,10 @@ class CertificateListActivity : AppCompatActivity() {
     lateinit var str_certificateperiod: String
     lateinit var str_certificateetc: String
 
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_certificate_list)
@@ -38,6 +42,24 @@ class CertificateListActivity : AppCompatActivity() {
         tvCertificateDate = findViewById(R.id.certificatedate)
         tvCertificatePeriod = findViewById(R.id.certificateperiod)
         tvCertificateEtc = findViewById(R.id.certificateetc)
+
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
+
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this,CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val intent = intent
         str_certificatename = intent.getStringExtra("intent_name").toString()
