@@ -34,6 +34,6 @@ class PortListAdapter(val context: Context, val portList: ArrayList<ItemPort>): 
         return 0
     }
     override fun getCount(): Int {
-        return portList.size
+        return 5
     }
 }
