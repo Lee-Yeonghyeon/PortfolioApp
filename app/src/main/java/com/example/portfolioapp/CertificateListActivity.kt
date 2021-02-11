@@ -12,9 +12,7 @@ import android.widget.TextView
 
 class CertificateListActivity : AppCompatActivity() {
 
-    // 하하하하하하하하하하하하하하하ㅏ하하하하하하 하하하하하핳 ㅏ하하하하하하하 ㅏ하하하핳 ㅏ하하하하하핳ㅎ 하하핳 ㅏ하
     lateinit var cert: TextView
-    //하하하핳
     lateinit var certificate: CertificateManager
     lateinit var sqlitedb: SQLiteDatabase
 
