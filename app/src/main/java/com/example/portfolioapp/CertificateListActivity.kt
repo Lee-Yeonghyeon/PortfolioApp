@@ -14,7 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 class CertificateListActivity : AppCompatActivity() {
-
+    //안ㄴ녕하세요 여러분~~
     lateinit var certificate: CertificateManager
     lateinit var sqlitedb: SQLiteDatabase
 
