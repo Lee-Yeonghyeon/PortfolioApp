@@ -156,7 +156,7 @@ class HomeActivity: AppCompatActivity() {
         var cursor2: Cursor
         cursor2 = sqlitedb.rawQuery("SELECT * FROM prize;", null)
 
-        while (cursor2.moveToNext()) {
+        while (cursor3.moveToNext()) {
             do {
                 str_prizeTitle = cursor2.getString(cursor2.getColumnIndex("name")).toString()
                 str_prizeDate = cursor2.getString(cursor2.getColumnIndex("date")).toString()
