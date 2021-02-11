@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/h_prize_title"
+        android:id="@+id/h_cert_title"
         android:layout_marginTop="6dp"
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
@@ -25,11 +25,11 @@
             android:layout_marginBottom="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="수상일: "
+            android:text="취득일: "
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/h_prize_date"
+            android:id="@+id/h_cert_date"
             android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

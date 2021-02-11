@@ -5,14 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.view.Menu
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.TextView
+import android.view.MenuItem
+import android.widget.*
 import com.example.mypart_pofo.PorflioManager
+import java.net.URL
 
 class PortfolioViewActivity : AppCompatActivity(){
 
@@ -33,6 +35,8 @@ class PortfolioViewActivity : AppCompatActivity(){
     lateinit var btn_viewP_modify : Button
     lateinit var btn_viewP_delete : Button
 
+
+
     lateinit var str_actName : String
     lateinit var str_actDay_Start : String
     lateinit var str_actDay_End : String
@@ -40,9 +44,8 @@ class PortfolioViewActivity : AppCompatActivity(){
     lateinit var str_actContent : String
     lateinit var str_image : String
 
-    lateinit var nav_portfolio: ImageView
-    lateinit var nav_home: ImageView
-    lateinit var nav_certificate: ImageView
+    lateinit var photouri: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,41 +65,64 @@ class PortfolioViewActivity : AppCompatActivity(){
         btn_viewP_modify = findViewById(R.id.btn_viewP_modify)
         btn_viewP_delete = findViewById(R.id.btn_viewP_delete)
 
-        nav_portfolio = findViewById(R.id.nav_portfolio)
-        nav_home = findViewById(R.id.nav_home)
-        nav_certificate = findViewById(R.id.nav_certificate)
-
-        nav_portfolio.setOnClickListener {
-            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
-            startActivity(intent)
-        }
-        nav_home.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
-            startActivity(intent)
-        }
-        nav_certificate.setOnClickListener {
-            val intent = Intent(this,CertificateViewActivity::class.java)
-            startActivity(intent)
-        }
-
+        //뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
 
         val intent= intent
-        str_actName = intent.getStringExtra("intent_actName").toString()
+        str_actName = intent.getStringExtra("intent_name")!!
 
         portfolio = PorflioManager(this,"portfolio",null,1)
         sqlitedb = portfolio.readableDatabase
 
+        Log.d("myDB","intent_name: "+str_actName)
+
         var cursor : Cursor
         cursor = sqlitedb.rawQuery("SELECT * FROM portfolio WHERE name = '"+str_actName+"';",null)
+        //cursor = sqlitedb.rawQuery("SELECT * FROM portfolio;",null)
 
-        if(cursor.moveToNext()){
-            str_actDay_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
-            str_actDay_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
-            str_actSort = cursor.getString(cursor.getColumnIndex("sort")).toString()
-            str_actContent = cursor.getString(cursor.getColumnIndex("content")).toString()
-            str_image = cursor.getString(cursor.getColumnIndex("image")).toString()
+        str_actDay_Start=""
+        str_actDay_End=""
+        str_actSort=""
+        str_actContent=""
 
-        }
+        //if(cursor.moveToNext()){
+        //if(str_actName==cursor.getString(cursor.getColumnIndex("name")).toString()){
+        cursor.moveToFirst()
+        str_actDay_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
+        str_actDay_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
+        str_actSort = cursor.getString(cursor.getColumnIndex("sort")).toString()
+        str_actContent = cursor.getString(cursor.getColumnIndex("content")).toString()
+        str_image = cursor.getString(cursor.getColumnIndex("image")).toString()
+
+        //str_image = getAllPhotos()
+
+        Log.d("myDB", "str_image : " + str_image)
+
+
+
+        //ImgV_viewP_picture.setImageResource(str_image.toInt())
+
+        /*  var image_task: URLtoBitmapTask = URLtoBitmapTask()
+           image_task = URLtoBitmapTask().apply { url = URL(str_image) }
+           var bitmap: Bitmap = image_task.execute().get()
+           ImgV_viewP_picture.setImageBitmap(bitmap)*/
+
+
+
+
+        //}
+//            str_actDay_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
+//            str_actDay_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
+//            str_actSort = cursor.getString(cursor.getColumnIndex("sort")).toString()
+//            str_actContent = cursor.getString(cursor.getColumnIndex("content")).toString()
+//            //str_image = cursor.getString(cursor.getColumnIndex("image")).toString()
+//            Log.d("myDB","str_actContent: "+str_actContent)
+//            var image_task: URLtoBitmapTask = URLtoBitmapTask()
+//            image_task = URLtoBitmapTask().apply { url = URL("{이미지의 url}") }
+//            var bitmap: Bitmap = image_task.execute().get()
+//            ImgV_viewP_picture.setImageBitmap(bitmap)
+        //}
 
         cursor.close()
         sqlitedb.close()
@@ -109,24 +135,46 @@ class PortfolioViewActivity : AppCompatActivity(){
         tv_viewP_sort.text = str_actSort
         tv_writeP_content.text = str_actContent
 
+
+        //수정하기 버튼을 눌렀을때
+        btn_viewP_modify.setOnClickListener {
+
+            var activity_name: String = tv_viewP_name.text.toString()
+
+            val intent = Intent(this, PortfolioModifyActivity::class.java)
+            intent.putExtra("intent_name", activity_name)
+            startActivity(intent)
+
+        }
+
+
+        //삭제하기 버튼을 눌렀을때
         btn_viewP_delete.setOnClickListener {
             portfolio = PorflioManager(this, "portfolio", null, 1)
             sqlitedb = portfolio.readableDatabase
             sqlitedb.execSQL( "DELETE FROM portfolio WHERE name = '"+str_actName+"';")
 
+            Toast.makeText(this, "삭제 완료", Toast.LENGTH_SHORT).show()
+
             sqlitedb.close()
             portfolio.close()
         }
 
-
-
-
-        //ImgV_viewP_picture.setImageResource(imageUri.toString())
     }
 
-
-
-
+    //뒤로가기 버튼
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            android.R.id.home ->{
+                val intent = Intent(this,PortfolioFullViewActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else->{
+                return super.onOptionsItemSelected(item)
+            }
+        }
+    }
 
 
 }

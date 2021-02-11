@@ -155,10 +155,14 @@ class WritePortfolioActivity : AppCompatActivity() {
             sqlitedb.close()
 
             Log.d("myDB", "activiy_name_write: " + activity_name)
+            Log.d("myDB", "intent_startDate: " + activity_date_start)
+
             //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
             val intent = Intent(this, PortfolioFullViewActivity::class.java)
             intent.putExtra("intent_name", activity_name)
-            startActivity(intent)
+            val intent2 = Intent(this, PortfolioCalendarViewActivity::class.java)
+            intent2.putExtra("intent_startDate", calendarTextViewStart.text.toString())
+            startActivity(intent2)
 
             //작성완료 토스트 메세지
             Toast.makeText(this, "작성 완료", Toast.LENGTH_SHORT).show()
