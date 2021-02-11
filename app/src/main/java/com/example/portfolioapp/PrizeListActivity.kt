@@ -3,6 +3,7 @@ package com.example.portfolioapp
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -19,13 +20,13 @@ class PrizeListActivity : AppCompatActivity() {
     lateinit var tvPrizeName: TextView
     lateinit var tvPrizeDate: TextView
     lateinit var tvPrizeContents: TextView
-    lateinit var tvPrizeEtc: TextView
+    lateinit var tvPrizeUrl: TextView
 
     lateinit var str_contestname: String
     lateinit var str_prizename: String
     lateinit var str_prizedate: String
     lateinit var str_prizecontents: String
-    lateinit var str_prizeetc: String
+    lateinit var str_prizeurl: String
 
     lateinit var nav_portfolio: ImageView
     lateinit var nav_home: ImageView
@@ -43,7 +44,7 @@ class PrizeListActivity : AppCompatActivity() {
         tvPrizeName = findViewById(R.id.prizename)
         tvPrizeDate = findViewById(R.id.prizedate)
         tvPrizeContents = findViewById(R.id.prizecontents)
-        tvPrizeEtc = findViewById(R.id.prizeetc)
+        tvPrizeUrl = findViewById(R.id.prizeurl)
 
         nav_portfolio = findViewById(R.id.nav_portfolio)
         nav_home = findViewById(R.id.nav_home)
@@ -70,13 +71,13 @@ class PrizeListActivity : AppCompatActivity() {
         sqlitedb = prize.readableDatabase
 
         var cursor: Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM prize;", null)
+        cursor = sqlitedb.rawQuery("SELECT * FROM prize WHERE name = '"+str_contestname+"';", null)
 
         if (cursor.moveToNext()) {
             str_prizename = cursor.getString((cursor.getColumnIndex("prizename"))).toString()
             str_prizedate = cursor.getString((cursor.getColumnIndex("date"))).toString()
-            str_prizecontents = cursor.getInt(cursor.getColumnIndex("contents")).toString()
-            str_prizeetc = cursor.getString((cursor.getColumnIndex("etc"))).toString()
+            str_prizecontents = cursor.getString(cursor.getColumnIndex("contents")).toString()
+            str_prizeurl = cursor.getString((cursor.getColumnIndex("url"))).toString()
         }
 
         cursor.close()
@@ -87,7 +88,21 @@ class PrizeListActivity : AppCompatActivity() {
         tvPrizeName.text = str_prizename
         tvPrizeDate.text = str_prizedate
         tvPrizeContents.text = str_prizecontents
-        tvPrizeEtc.text = str_prizeetc
+        tvPrizeUrl.text = str_prizeurl
+
+        //클릭한 수상 이름으로 액션바 타이틀 변경
+        supportActionBar?.setTitle(tvContestName.text)
+
+        //깃 주소로 가기(인터넷 주소 연결)
+        tvPrizeUrl.setOnClickListener{
+
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://github.com/Lee-Yeonghyeon/PortfolioApp")
+            //intent.data = Uri.parse(tvCertificateGit.text.toString())
+            if(intent.resolveActivity(packageManager) != null){
+                startActivity(intent)
+            }
+        }
     }
 
 

@@ -1,5 +1,4 @@
 package com.example.portfolioapp
-
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
@@ -12,13 +11,13 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.core.content.ContextCompat
-import com.example.mypart_pofo.PorflioManager
 import java.util.*
 
 class WritePortfolioActivity : AppCompatActivity() {
@@ -36,10 +35,6 @@ class WritePortfolioActivity : AppCompatActivity() {
     lateinit var imageView : ImageView
     lateinit var imageUri : String
     lateinit var chPink : CheckBox
-
-    lateinit var nav_portfolio: ImageView
-    lateinit var nav_home: ImageView
-    lateinit var nav_certificate: ImageView
 
     //DB관련
     lateinit var portfolio: PorflioManager
@@ -69,24 +64,7 @@ class WritePortfolioActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         chPink = findViewById(R.id.cbPink)
 
-        nav_portfolio = findViewById(R.id.nav_portfolio)
-        nav_home = findViewById(R.id.nav_home)
-        nav_certificate = findViewById(R.id.nav_certificate)
-
         //chPink.setOnCheckedChangeListener(this)
-
-        nav_portfolio.setOnClickListener {
-            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
-            startActivity(intent)
-        }
-        nav_home.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
-            startActivity(intent)
-        }
-        nav_certificate.setOnClickListener {
-            val intent = Intent(this,CertificateViewActivity::class.java)
-            startActivity(intent)
-        }
 
 
         btn_writeP_picture.setOnClickListener { openGallery() }
@@ -125,7 +103,7 @@ class WritePortfolioActivity : AppCompatActivity() {
 
         //뒤로가기 버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
 
 
         //DB연동
@@ -155,14 +133,10 @@ class WritePortfolioActivity : AppCompatActivity() {
             sqlitedb.close()
 
             Log.d("myDB", "activiy_name_write: " + activity_name)
-            Log.d("myDB", "intent_startDate: " + activity_date_start)
-
             //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
             val intent = Intent(this, PortfolioFullViewActivity::class.java)
-            intent.putExtra("intent_name", activity_name)
-            val intent2 = Intent(this, PortfolioCalendarViewActivity::class.java)
-            intent2.putExtra("intent_startDate", calendarTextViewStart.text.toString())
-            startActivity(intent2)
+            //intent.putExtra("intent_name", activity_name)
+            startActivity(intent)
 
             //작성완료 토스트 메세지
             Toast.makeText(this, "작성 완료", Toast.LENGTH_SHORT).show()
@@ -253,73 +227,89 @@ class WritePortfolioActivity : AppCompatActivity() {
                 }
             }*/
 
-        // chPink.setOnCheckedChangeListener(listener)
+           // chPink.setOnCheckedChangeListener(listener)
 
 
-        //권한이 부여되었는지 확인인
-        if (ContextCompat.checkSelfPermission(
-                        this,
-                        Manifest.permission.READ_EXTERNAL_STORAGE
-                ) != PackageManager.PERMISSION_GRANTED
-        )
-
-        //권한이 허용되지 않음
-            if (ActivityCompat.shouldShowRequestPermissionRationale(
+            //권한이 부여되었는지 확인인
+            if (ContextCompat.checkSelfPermission(
                             this,
                             Manifest.permission.READ_EXTERNAL_STORAGE
-                    )
-            ) {
-                //이전에 거부한 적이 있으면
-                var dlg = AlertDialog.Builder(this)
-                dlg.setTitle("사진 권한")
-                dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수적으로 필요합니다")
-                dlg.setPositiveButton("확인") { dialog, which ->
+                    ) != PackageManager.PERMISSION_GRANTED
+            )
+
+            //권한이 허용되지 않음
+                if (ActivityCompat.shouldShowRequestPermissionRationale(
+                                this,
+                                Manifest.permission.READ_EXTERNAL_STORAGE
+                        )
+                ) {
+                    //이전에 거부한 적이 있으면
+                    var dlg = AlertDialog.Builder(this)
+                    dlg.setTitle("사진 권한")
+                    dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수적으로 필요합니다")
+                    dlg.setPositiveButton("확인") { dialog, which ->
+                        ActivityCompat.requestPermissions(
+                                this@WritePortfolioActivity
+                                ,
+                                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                                REQUEST_READ_EXTERNAL_STORAGE
+                        )
+                        dlg.setNegativeButton("취소", null)
+                        dlg.show()
+                    }
+                } else {
+                    //처음 권한 요청하는 경우
                     ActivityCompat.requestPermissions(
                             this@WritePortfolioActivity
                             ,
                             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                             REQUEST_READ_EXTERNAL_STORAGE
                     )
-                    dlg.setNegativeButton("취소", null)
-                    dlg.show()
-                }
-            } else {
-                //처음 권한 요청하는 경우
-                ActivityCompat.requestPermissions(
-                        this@WritePortfolioActivity
-                        ,
-                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                        REQUEST_READ_EXTERNAL_STORAGE
-                )
-            } else {
-            //권한이 이미 허용된 경우
+                } else {
+                //권한이 이미 허용된 경우
+
+            }
 
         }
 
+    //뒤로가기 버튼
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            android.R.id.home ->{
+                val intent = Intent(this,PortfolioFullViewActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else->{
+                return super.onOptionsItemSelected(item)
+            }
+        }
     }
+
 
     // 절대경로 변환
     fun absolutelyPath(path: Uri): String {
         var result:String
         var cursor:Cursor = getContentResolver().query(path, null, null, null, null)!!
 
-//        if (cursor == null) { // Source is Dropbox or other similar local file path
-//
-//            result = path.getPath()!!
-//
-//
-//
-//        } else {
-//
-//            cursor.moveToFirst()
-//
-//            var idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
-//
-//            result = cursor.getString(idx)
-//
-//            cursor.close()
-//
-//        }
+        if (cursor == null) { // Source is Dropbox or other similar local file path
+
+            result = path.getPath()!!
+
+
+
+        } else {
+
+            cursor.moveToFirst()
+
+            var idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
+
+            result = cursor.getString(idx)
+
+            cursor.close()
+
+        }
         result = path.getPath()!!
         result="com.android.providers.media.documents"+result
         Log.d("myDB","result: "+result)
@@ -355,11 +345,11 @@ class WritePortfolioActivity : AppCompatActivity() {
                 val projection = arrayOf(column)
                 try {
                     cursor = getContentResolver().query(
-                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                            projection,
-                            MediaStore.Images.Media._ID + " = ? ",
-                            arrayOf(document_id),
-                            null
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        projection,
+                        MediaStore.Images.Media._ID + " = ? ",
+                        arrayOf(document_id),
+                        null
                     )!!
                     if (cursor != null) {
                         cursor.moveToFirst()
@@ -403,4 +393,10 @@ class WritePortfolioActivity : AppCompatActivity() {
 
 
 }
+
+
+   
+
+
+
 

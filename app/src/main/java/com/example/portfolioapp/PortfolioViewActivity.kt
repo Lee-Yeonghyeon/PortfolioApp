@@ -1,5 +1,4 @@
 package com.example.portfolioapp
-
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
@@ -87,26 +86,26 @@ class PortfolioViewActivity : AppCompatActivity(){
         str_actContent=""
 
         //if(cursor.moveToNext()){
-        //if(str_actName==cursor.getString(cursor.getColumnIndex("name")).toString()){
-        cursor.moveToFirst()
-        str_actDay_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
-        str_actDay_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
-        str_actSort = cursor.getString(cursor.getColumnIndex("sort")).toString()
-        str_actContent = cursor.getString(cursor.getColumnIndex("content")).toString()
-        str_image = cursor.getString(cursor.getColumnIndex("image")).toString()
+            //if(str_actName==cursor.getString(cursor.getColumnIndex("name")).toString()){
+                cursor.moveToFirst()
+                str_actDay_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
+                str_actDay_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
+                str_actSort = cursor.getString(cursor.getColumnIndex("sort")).toString()
+                str_actContent = cursor.getString(cursor.getColumnIndex("content")).toString()
+                str_image = cursor.getString(cursor.getColumnIndex("image")).toString()
 
-        //str_image = getAllPhotos()
+                //str_image = getAllPhotos()
 
-        Log.d("myDB", "str_image : " + str_image)
+                Log.d("myDB", "str_image : " + str_image)
 
 
 
-        //ImgV_viewP_picture.setImageResource(str_image.toInt())
+             //ImgV_viewP_picture.setImageResource(str_image.toInt())
 
-        /*  var image_task: URLtoBitmapTask = URLtoBitmapTask()
-           image_task = URLtoBitmapTask().apply { url = URL(str_image) }
-           var bitmap: Bitmap = image_task.execute().get()
-           ImgV_viewP_picture.setImageBitmap(bitmap)*/
+             /*  var image_task: URLtoBitmapTask = URLtoBitmapTask()
+                image_task = URLtoBitmapTask().apply { url = URL(str_image) }
+                var bitmap: Bitmap = image_task.execute().get()
+                ImgV_viewP_picture.setImageBitmap(bitmap)*/
 
 
 

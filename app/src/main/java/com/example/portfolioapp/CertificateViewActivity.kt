@@ -67,13 +67,8 @@ class CertificateViewActivity : AppCompatActivity() {
 
         while (certificateCursor.moveToNext()) {
             var str_name =
-                certificateCursor.getString(certificateCursor.getColumnIndex("name")).toString()
-            var str_date =
-                certificateCursor.getString(certificateCursor.getColumnIndex("date")).toString()
-            var str_period =
-                certificateCursor.getString(certificateCursor.getColumnIndex("period")).toString()
-            var str_etc =
-                certificateCursor.getString(certificateCursor.getColumnIndex("etc")).toString()
+                    certificateCursor.getString(certificateCursor.getColumnIndex("name")).toString()
+
 
             var layout_item: LinearLayout = LinearLayout(this)
             layout_item.orientation = LinearLayout.VERTICAL
@@ -115,10 +110,6 @@ class CertificateViewActivity : AppCompatActivity() {
 
         while (prizecursor.moveToNext()) {
             var str_contestname = prizecursor.getString(prizecursor.getColumnIndex("name")).toString()
-            var str_prizename =prizecursor.getString(prizecursor.getColumnIndex("prizename")).toString()
-            var str_prizedate = prizecursor.getString(prizecursor.getColumnIndex("date")).toString()
-            var str_prizecontents = prizecursor.getString(prizecursor.getColumnIndex("contents")).toString()
-            var str_prizeetc = prizecursor.getString(prizecursor.getColumnIndex("etc")).toString()
 
             var prize_layout_item: LinearLayout = LinearLayout(this)
             prize_layout_item.orientation = LinearLayout.VERTICAL

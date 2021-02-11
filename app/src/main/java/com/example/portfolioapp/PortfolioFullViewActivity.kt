@@ -1,18 +1,19 @@
 package com.example.portfolioapp
-
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mypart_pofo.PorflioManager
-import com.example.portfolioapp.R
 
 
 class PortfolioFullViewActivity : AppCompatActivity(){
@@ -20,102 +21,24 @@ class PortfolioFullViewActivity : AppCompatActivity(){
     //DB관련
     lateinit var portfolio: PorflioManager
     lateinit var sqlitedb: SQLiteDatabase
-    lateinit var view : RecyclerView
-    lateinit var layout: LinearLayout
 
-    lateinit var nav_portfolio: ImageView
-    lateinit var nav_home: ImageView
-    lateinit var nav_certificate: ImageView
+    lateinit var mRecyclerView : RecyclerView
 
+    var actList = ArrayList<Act>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio_full_view)
 
-        nav_portfolio = findViewById(R.id.nav_portfolio)
-        nav_home = findViewById(R.id.nav_home)
-        nav_certificate = findViewById(R.id.nav_certificate)
-
-        supportActionBar?.setTitle("포트폴리오 활동별로보기")
+        supportActionBar?.setTitle("활동별 모아보기")
 
         portfolio = PorflioManager(this,"portfolio",null,1)
         sqlitedb = portfolio.readableDatabase
 
-        layout = findViewById(R.id.portfolioAll)
-
-        nav_portfolio.setOnClickListener {
-            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
-            startActivity(intent)
-        }
-        nav_home.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
-            startActivity(intent)
-        }
-        nav_certificate.setOnClickListener {
-            val intent = Intent(this,CertificateViewActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        var cursor : Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM portfolio;",null)
-
-        var num: Int =0
-        while(cursor.moveToNext()){
-            var actName = cursor.getString(cursor.getColumnIndex("name")).toString()
-            var actDate_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
-            var actDate_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
-            var actSort = cursor.getString(cursor.getColumnIndex("sort")).toString()
-            var actContent = cursor.getString(cursor.getColumnIndex("content")).toString()
-            var actImage = cursor.getString(cursor.getColumnIndex("image")).toString()
-
-            var layout_item : LinearLayout = LinearLayout(this)
-            layout_item.orientation = LinearLayout.VERTICAL
-            layout_item.setPadding(20,10,20,10)
-            layout_item.id = num
-            layout_item.setTag(actName)
-
-            var tvName: TextView = TextView(this)
-            tvName.text = actName
-            tvName.textSize = 30F
-            tvName.setBackgroundColor(Color.LTGRAY)
-            layout_item.addView(tvName)
-
-            var tvDateStart : TextView = TextView(this)
-            tvDateStart.text = actDate_Start
-            layout_item.addView(tvDateStart)
-
-            var tvDateEnd : TextView = TextView(this)
-            tvDateEnd.text = actDate_End
-            layout_item.addView(tvDateEnd)
-
-            var tvSort : TextView = TextView(this)
-            tvSort.text = actSort
-            layout_item.addView(tvSort)
-
-            var tvContent : TextView = TextView(this)
-            tvContent.text = actContent
-            layout_item.addView(tvContent)
-
-            var tvImage : TextView = TextView(this)
-            tvImage.text = actImage
-            layout_item.addView(tvImage)
-
-            layout_item.setOnClickListener {
-                val intent = Intent(this,PortfolioViewActivity::class.java)
-                intent.putExtra("intent_name",actName)
-                startActivity(intent)
-            }
-
-            layout.addView(layout_item)
-            num++;
-
-        }
-
-        cursor.close()
-        sqlitedb.close()
-        portfolio.close()
-
+        var actName:String=""
+        var actDate_Start :String=""
+        var actDate_End :String=""
+        var actImage :String=""
 
 
         // Spinner 선언
@@ -125,6 +48,17 @@ class PortfolioFullViewActivity : AppCompatActivity(){
         var sData = resources.getStringArray(R.array.list_array)
         var adapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,sData)
         spinner.adapter = adapter
+
+        //어탭터랑 연결
+        mRecyclerView = findViewById(R.id.mRecyclerView)
+        val mAdapter = recycle_Adapter(this, actList) { act ->
+            val intent = Intent(this, PortfolioViewActivity::class.java)
+            intent.putExtra("intent_name", actName)
+            startActivity(intent)
+        }
+
+
+        val lm = LinearLayoutManager(this)
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -140,11 +74,57 @@ class PortfolioFullViewActivity : AppCompatActivity(){
                 }
 
                 //spinner 제대로 선택된 것  확인하는 방법
-                var myHero = spinner.selectedItem //요렇게...
-                println(myHero)
+                //var actSort = spinner.selectedItem //요렇게...
+                var sortName : String = adapter.getItem(position).toString()
+                Log.d("myDB", "sort_Name : " + sortName)
+
+                Toast.makeText(this@PortfolioFullViewActivity,"선택된 항목: "+spinner.getItemAtPosition(position),Toast.LENGTH_SHORT).show()
+
+               var selected_sort :String = spinner.getItemAtPosition(position).toString()  //text 에 스피너의 값이 String으로 가져와집니다.
+                Log.d("myDB","selected_sort= "+selected_sort)
 
 
-                Toast.makeText(this@PortfolioFullViewActivity,adapter.getItem(position)+"선택했습니다",Toast.LENGTH_SHORT).show()
+                //항목별로 모아보기
+
+                portfolio = PorflioManager(this@PortfolioFullViewActivity,"portfolio",null,1)
+                sqlitedb = portfolio.readableDatabase
+
+                //var selected_sort :String =""
+
+                var cursor2 : Cursor
+                if(selected_sort=="전체"){
+                    cursor2=sqlitedb.rawQuery("SELECT * FROM portfolio;", null)
+                }else {
+
+                    cursor2 = sqlitedb.rawQuery("SELECT * FROM portfolio WHERE sort = '" + selected_sort + "';", null)
+                }
+
+                //리사이클러뷰를 새롭게 지우고 해당하는 종류의 대외활동을 보여준다.
+                actList.clear()
+
+
+                while(cursor2.moveToNext()){
+
+
+                        actName = cursor2.getString(cursor2.getColumnIndex("name")).toString()
+                        actDate_Start = cursor2.getString(cursor2.getColumnIndex("startDate")).toString()
+                        actDate_End = cursor2.getString(cursor2.getColumnIndex("EndDate")).toString()
+                        actImage = cursor2.getString(cursor2.getColumnIndex("image")).toString()
+
+                        actList.add(Act(actName,actDate_Start,actDate_End,actImage))
+
+
+                }
+
+                mRecyclerView.adapter = mAdapter
+
+                //val lm = LinearLayoutManager(this)
+                mRecyclerView.layoutManager = lm
+                mRecyclerView.setHasFixedSize(true)
+
+                cursor2.close()
+                sqlitedb.close()
+                portfolio.close()
 
             }
 
@@ -154,17 +134,8 @@ class PortfolioFullViewActivity : AppCompatActivity(){
 
         }
 
-
-
-
-
-
-
-
-
-
-
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean { //각각 포트폴리오 기록창, PortfolioFullView 창으로 이동할 수 있도록 연결해주세요(액션바에 있는 아이콘임)
         menuInflater.inflate(R.menu.forfullview, menu)

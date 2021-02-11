@@ -23,7 +23,17 @@
         android:paddingBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/scdream4"
+            android:text="자격증"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/prize"
@@ -39,7 +49,17 @@
         android:paddingBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/certificate"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/certificate">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/scdream4"
+            android:text="수상경력"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
