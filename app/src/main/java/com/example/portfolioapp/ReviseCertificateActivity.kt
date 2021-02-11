@@ -29,7 +29,7 @@ class ReviseCertificateActivity : AppCompatActivity() {
     lateinit var edt_writeC_etc: EditText
     lateinit var btn_writeC_picture: Button
     lateinit var certificateimg: ImageView
-    lateinit var btn_writeC_file: Button
+    lateinit var edt_writeC_url: EditText
     lateinit var btn_writeC_revise: Button
 
     lateinit var nav_portfolio: ImageView
@@ -47,7 +47,7 @@ class ReviseCertificateActivity : AppCompatActivity() {
         edt_writeC_etc = findViewById(R.id.edt_writeC_etc)
         btn_writeC_picture = findViewById(R.id.btn_writeC_picture)
         certificateimg = findViewById(R.id.certificateimg)
-        btn_writeC_file = findViewById(R.id.btn_writeC_file)
+        edt_writeC_url = findViewById(R.id.edt_writeC_url)
         btn_writeC_revise = findViewById(R.id.btn_writeC_revise)
 
         nav_portfolio = findViewById(R.id.nav_portfolio)
@@ -97,10 +97,10 @@ class ReviseCertificateActivity : AppCompatActivity() {
         //수정완료 클릭했을때
         btn_writeC_revise.setOnClickListener {
             var str_name: String = edt_writeC_name.text.toString()
-            //var str_date: String = calendarTextView.text.toString()
             var str_date: String = " "
             var str_period: String = edt_writeC_selectPeriod.text.toString()
             var str_etc: String = edt_writeC_etc.text.toString()
+            var str_url: String = edt_writeC_url.text.toString()
 
             if (edt_writeC_date.text !== null) {
                 str_date = edt_writeC_date.text.toString()
@@ -109,7 +109,7 @@ class ReviseCertificateActivity : AppCompatActivity() {
             certificatesqlitedb = certificate.writableDatabase
             certificatesqlitedb.execSQL(
                 "UPDATE certificate SET date='" + str_date + "', period='"
-                        + str_period + "',etc='" + str_etc
+                        + str_period + "',etc='" + str_etc+"', url='"+str_url
                         + "' WHERE name = '" + str_name + "';"
             )
             certificatesqlitedb.close()

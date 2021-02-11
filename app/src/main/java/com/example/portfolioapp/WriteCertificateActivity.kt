@@ -28,7 +28,7 @@ class WriteCertificateActivity : AppCompatActivity() {
     lateinit var edt_writeC_etc: EditText
     lateinit var btn_writeC_picture: Button
     lateinit var certificateimg: ImageView
-    lateinit var edt_writeC_git: EditText
+    lateinit var edt_writeC_url: EditText
     lateinit var btn_writeC_complete: Button
 
     lateinit var nav_portfolio: ImageView
@@ -47,7 +47,7 @@ class WriteCertificateActivity : AppCompatActivity() {
         edt_writeC_etc = findViewById(R.id.edt_writeC_etc)
         btn_writeC_picture = findViewById(R.id.btn_writeC_picture)
         certificateimg = findViewById(R.id.certificateimg)
-        edt_writeC_git = findViewById(R.id.edt_writeC_git)
+        edt_writeC_url = findViewById(R.id.edt_writeC_url)
         btn_writeC_complete = findViewById(R.id.btn_writeC_complete)
 
         nav_portfolio = findViewById(R.id.nav_portfolio)
@@ -99,7 +99,7 @@ class WriteCertificateActivity : AppCompatActivity() {
             var str_date: String =" "
             var str_period: String = edt_writeC_selectPeriod.text.toString()
             var str_etc: String = edt_writeC_etc.text.toString()
-            var str_git: String = edt_writeC_git.text.toString()
+            var str_url: String = edt_writeC_url.text.toString()
 
             if(edt_writeC_date.text !==null){
                 str_date = edt_writeC_date.text.toString()
@@ -107,7 +107,7 @@ class WriteCertificateActivity : AppCompatActivity() {
 
             certificatesqlitedb = certificate.writableDatabase
             certificatesqlitedb.execSQL("INSERT INTO certificate VALUES ('" + str_name +"','"
-                    + str_date + "',"+"'"+str_period+"'"+",'"+str_etc+"'"+",'"+str_git+"');")
+                    + str_date + "',"+"'"+str_period+"'"+",'"+str_etc+"'"+",'"+str_url+"');")
             certificatesqlitedb.close()
 
             val intent = Intent(this,CertificateViewActivity::class.java)

@@ -26,10 +26,9 @@ class WritePrizeActivity : AppCompatActivity() {
     lateinit var btn_writeP_date: Button
     lateinit var edt_writeP_date: TextView
     lateinit var edt_writeP_contents: EditText
-    lateinit var edt_writeP_etc: EditText
+    lateinit var edt_writeP_url: EditText
     lateinit var btn_writeP_picture: Button
     lateinit var prizeimg: ImageView
-    lateinit var btn_writeP_file: Button
     lateinit var btn_writeP_complete: Button
 
     lateinit var nav_portfolio: ImageView
@@ -45,10 +44,10 @@ class WritePrizeActivity : AppCompatActivity() {
         btn_writeP_date = findViewById(R.id.btn_writeP_date)
         edt_writeP_date = findViewById(R.id.edt_writeP_date)
         edt_writeP_contents = findViewById(R.id.edt_writeP_contents)
-        edt_writeP_etc = findViewById(R.id.edt_writeP_etc)
+        edt_writeP_url = findViewById(R.id.edt_writeP_url)
         btn_writeP_picture = findViewById(R.id.btn_writeP_picture)
         prizeimg = findViewById(R.id.prizeimg)
-        btn_writeP_file = findViewById(R.id.btn_writeP_file)
+
         btn_writeP_complete = findViewById(R.id.btn_writeP_complete)
 
         nav_portfolio = findViewById(R.id.nav_portfolio)
@@ -100,14 +99,14 @@ class WritePrizeActivity : AppCompatActivity() {
             var str_prizename:String=edt_writeP_prizeName.text.toString()
             var str_date:String=" "
             var str_contents:String=edt_writeP_contents.text.toString()
-            var str_etc:String=edt_writeP_etc.text.toString()
+            var str_url:String=edt_writeP_url.text.toString()
 
             if(edt_writeP_date.text !== null){
                 str_date = edt_writeP_date.text.toString()
             }
 
             prizesqlitedb = prize.writableDatabase
-            prizesqlitedb.execSQL("INSERT INTO prize VALUES ('"+str_contestname+"','"+str_prizename+"','"+str_date+"','"+str_contents+"','"+str_etc+"');")
+            prizesqlitedb.execSQL("INSERT INTO prize VALUES ('"+str_contestname+"','"+str_prizename+"','"+str_date+"','"+str_contents+"','"+str_url+"');")
             prizesqlitedb.close()
 
             val intent = Intent(this,CertificateViewActivity::class.java)

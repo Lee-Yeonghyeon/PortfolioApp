@@ -11,7 +11,7 @@ class PrizeManager(
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("CREATE TABLE prize (name text, prizename text, date text, contents text, etc text)")
+        db!!.execSQL("CREATE TABLE prize (name text, prizename text, date text, contents text, url text)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

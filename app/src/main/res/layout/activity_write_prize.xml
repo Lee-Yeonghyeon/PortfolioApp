@@ -116,18 +116,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/scdream4"
-        android:text="비고"
+        android:text="url"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
-        android:id="@+id/edt_writeP_etc"
+        android:id="@+id/edt_writeP_url"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/edt_writeP_contents" />
 
@@ -136,13 +136,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="23dp"
         android:fontFamily="@font/scdream4"
         android:text="자료첨부"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_url" />
 
     <Button
         android:id="@+id/btn_writeP_picture"
@@ -155,20 +155,9 @@
         android:text="사진 첨부"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_etc" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_url" />
 
-    <Button
-        android:id="@+id/btn_writeP_file"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/graybutton"
-        android:fontFamily="@font/scdream3"
-        android:text="파일 첨부"
-        android:textSize="13sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_writeP_picture"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_etc" />
+
     <ImageView
         android:id="@+id/prizeimg"
         android:layout_width="wrap_content"

@@ -22,13 +22,13 @@ class CertificateListActivity : AppCompatActivity() {
     lateinit var tvCertificateDate: TextView
     lateinit var tvCertificatePeriod: TextView
     lateinit var tvCertificateEtc: TextView
-    lateinit var tvCertificateGit: TextView
+    lateinit var tvCertificateUrl: TextView
 
     lateinit var str_certificatename: String
     lateinit var str_certificatedate: String
     lateinit var str_certificateperiod: String
     lateinit var str_certificateetc: String
-    lateinit var str_certificategit: String
+    lateinit var str_certificateurl: String
 
     lateinit var nav_portfolio: ImageView
     lateinit var nav_home: ImageView
@@ -46,7 +46,7 @@ class CertificateListActivity : AppCompatActivity() {
         tvCertificateDate = findViewById(R.id.certificatedate)
         tvCertificatePeriod = findViewById(R.id.certificateperiod)
         tvCertificateEtc = findViewById(R.id.certificateetc)
-        tvCertificateGit = findViewById(R.id.certificategit)
+        tvCertificateUrl = findViewById(R.id.certificateurl)
 
         nav_portfolio = findViewById(R.id.nav_portfolio)
         nav_home = findViewById(R.id.nav_home)
@@ -79,7 +79,7 @@ class CertificateListActivity : AppCompatActivity() {
             str_certificatedate = cursor.getString((cursor.getColumnIndex("date"))).toString()
             str_certificateperiod = cursor.getString(cursor.getColumnIndex("period")).toString()
             str_certificateetc = cursor.getString((cursor.getColumnIndex("etc"))).toString()
-            str_certificategit = cursor.getString((cursor.getColumnIndex("url"))).toString()
+            str_certificateurl = cursor.getString((cursor.getColumnIndex("url"))).toString()
         }
 
         cursor.close()
@@ -90,14 +90,14 @@ class CertificateListActivity : AppCompatActivity() {
         tvCertificateDate.text = str_certificatedate
         tvCertificatePeriod.text = str_certificateperiod
         tvCertificateEtc.text = str_certificateetc
-        tvCertificateGit.text = str_certificategit
+        tvCertificateUrl.text = str_certificateurl
 
 
         //깃 주소로 가기(인터넷 주소 연결)
-        tvCertificateGit.setOnClickListener{
+        tvCertificateUrl.setOnClickListener{
 
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data =Uri.parse("https://github.com/Lee-Yeonghyeon/PortfolioApp/tree/master")
+            intent.data =Uri.parse("https://www.toeic.co.kr/")
             //intent.data = Uri.parse(tvCertificateGit.text.toString())
             if(intent.resolveActivity(packageManager) != null){
                 startActivity(intent)
