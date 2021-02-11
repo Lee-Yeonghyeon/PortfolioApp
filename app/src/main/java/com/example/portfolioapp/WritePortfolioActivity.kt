@@ -103,7 +103,7 @@ class WritePortfolioActivity : AppCompatActivity() {
 
         //뒤로가기 버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
 
 
         //DB연동
@@ -135,7 +135,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             Log.d("myDB", "activiy_name_write: " + activity_name)
             //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
             val intent = Intent(this, PortfolioFullViewActivity::class.java)
-            //intent.putExtra("intent_name", activity_name)
+            intent.putExtra("intent_name", activity_name)
             startActivity(intent)
 
             //작성완료 토스트 메세지

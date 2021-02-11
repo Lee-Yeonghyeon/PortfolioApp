@@ -12,7 +12,6 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
-import com.example.mypart_pofo.PorflioManager
 import java.net.URL
 
 class PortfolioViewActivity : AppCompatActivity(){
@@ -50,7 +49,7 @@ class PortfolioViewActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio_view)
 
-        supportActionBar?.setTitle("ㅇㅇ 공모전") //사용자가 선택한 공모전 이름이 타이틀로 바뀔 수 있게 수정해주세요
+
 
         //위젯과 연결
         tv_viewP_name = findViewById(R.id.tv_viewP_name)
@@ -70,6 +69,9 @@ class PortfolioViewActivity : AppCompatActivity(){
 
         val intent= intent
         str_actName = intent.getStringExtra("intent_name")!!
+
+        supportActionBar?.setTitle(str_actName) //사용자가 선택한 공모전 이름이 타이틀로 바뀔 수 있게 수정해주세요
+
 
         portfolio = PorflioManager(this,"portfolio",null,1)
         sqlitedb = portfolio.readableDatabase

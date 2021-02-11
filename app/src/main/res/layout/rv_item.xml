@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/item_border"
+    android:layout_marginTop="5dp">
+
+
+    <ImageView
+        android:id="@+id/PhotoImg"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/actNametv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/PhotoImg"
+        app:layout_constraintTop_toTopOf="@+id/PhotoImg"
+        tools:text="활동이름"/>
+
+    <TextView
+        android:id="@+id/actStartDatetv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/PhotoImg"
+        app:layout_constraintStart_toStartOf="@+id/actNametv"
+        tools:text="시작 날짜" />
+
+    <TextView
+        android:id="@+id/actEndDatetv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/actStartDatetv"
+        app:layout_constraintStart_toEndOf="@+id/actStartDatetv"
+        app:layout_constraintTop_toTopOf="@+id/actStartDatetv"
+        tools:text="종료 날짜" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

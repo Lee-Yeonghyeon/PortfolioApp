@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edt_writeP_name"
+        android:id="@+id/edt_modifyP_name"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/btn_writeP_selectDateStart"
+        android:id="@+id/btn_modifyP_selectDateStart"
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -51,10 +51,10 @@
         android:fontFamily="@font/scdream4"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_name" />
 
     <TextView
-        android:id="@+id/calendarTextViewStart"
+        android:id="@+id/modifycalendarTextViewStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -62,11 +62,11 @@
         android:fontFamily="@font/scdream4"
         android:textColor="@color/gray_dark"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_writeP_selectDateStart"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_name" />
+        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateStart"
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_name" />
 
     <Button
-        android:id="@+id/btn_writeP_selectDateEnd"
+        android:id="@+id/btn_modifyP_selectDateEnd"
         android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
@@ -75,10 +75,10 @@
         android:fontFamily="@font/scdream4"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_selectDateStart" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_selectDateStart" />
 
     <TextView
-        android:id="@+id/calendarTextViewEnd"
+        android:id="@+id/modifycalendarTextViewEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -86,8 +86,8 @@
         android:text="종료 날짜"
         android:textColor="@color/gray_dark"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_writeP_selectDateEnd"
-        app:layout_constraintTop_toBottomOf="@+id/calendarTextViewStart" />
+        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateEnd"
+        app:layout_constraintTop_toBottomOf="@+id/modifycalendarTextViewStart" />
 
     <TextView
         android:id="@+id/textView21"
@@ -100,16 +100,16 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_selectDateEnd" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_selectDateEnd" />
 
     <Spinner
-        android:id="@+id/spinner_writeP_sort"
+        android:id="@+id/spinner_modifyP_sort"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:text="활동 선택"
         app:layout_constraintStart_toEndOf="@+id/textView21"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_selectDateEnd" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_selectDateEnd" />
 
     <TextView
         android:id="@+id/textView23"
@@ -125,14 +125,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <EditText
-        android:id="@+id/edt_writeP_content"
+        android:id="@+id/edt_modifyP_content"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:inputType="textImeMultiLine"
         android:minLines="3"
         app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_writeP_sort" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_modifyP_sort" />
 
     <TextView
         android:id="@+id/textView22"
@@ -148,7 +148,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <Button
-        android:id="@+id/btn_writeP_picture"
+        android:id="@+id/btn_modifyP_picture"
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -157,15 +157,15 @@
         android:fontFamily="@font/scdream4"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_content" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_content" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/modifyimageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/btn_writeP_picture"
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_picture"
         app:srcCompat="@android:color/background_light" />
 
     <Button
@@ -177,8 +177,8 @@
         android:fontFamily="@font/scdream4"
         android:text="파일 첨부"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_writeP_picture"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_content" />
+        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_picture"
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_content" />
 
     <TextView
         android:id="@+id/textView25"
@@ -202,14 +202,14 @@
         android:textColor="@color/PINK"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/modifyimageView" />
 
     <Button
-        android:id="@+id/btn_writeP_complete"
+        android:id="@+id/btn_modifyP_complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="작성완료"
+        android:text="수정완료"
         android:fontFamily="@font/scdream4"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

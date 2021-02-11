@@ -1,4 +1,4 @@
-package com.example.mypart_pofo
+package com.example.portfolioapp
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

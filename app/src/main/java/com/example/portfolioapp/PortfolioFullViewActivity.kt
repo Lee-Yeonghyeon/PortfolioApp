@@ -150,7 +150,7 @@ class PortfolioFullViewActivity : AppCompatActivity(){
                 return true
             }
             R.id.moveCalendar -> {
-                val intent = Intent(this,PortfolioViewActivity::class.java)
+                val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
                 startActivity(intent)
                 return true
             }

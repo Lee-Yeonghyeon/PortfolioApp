@@ -4,7 +4,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mypart_pofo.PorflioManager
+
 
 class PortfolioModifyActivity  : AppCompatActivity() {
 
