@@ -151,16 +151,16 @@
 
     <TextView
         android:id="@+id/textView99"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/scdream4"
         android:text="url"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/certificateimg" />
 
     <EditText
         android:id="@+id/edt_writeC_url"
@@ -170,13 +170,13 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_writeC_complete"
         app:layout_constraintStart_toEndOf="@+id/textView99"
         app:layout_constraintTop_toBottomOf="@+id/certificateimg"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.906" />
 
     <Button
         android:id="@+id/btn_writeC_complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/graybutton"
         android:fontFamily="@font/scdream4"
         android:text="작성완료"

@@ -42,6 +42,8 @@ class CertificateListActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
 
+
+
         tvCertificateName = findViewById(R.id.certificatename)
         tvCertificateDate = findViewById(R.id.certificatedate)
         tvCertificatePeriod = findViewById(R.id.certificateperiod)
@@ -73,7 +75,7 @@ class CertificateListActivity : AppCompatActivity() {
         sqlitedb = certificate.readableDatabase
 
         var cursor: Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM certificate;", null)
+        cursor = sqlitedb.rawQuery("SELECT * FROM certificate WHERE name = '"+str_certificatename+"';", null)
 
         if (cursor.moveToNext()) {
             str_certificatedate = cursor.getString((cursor.getColumnIndex("date"))).toString()
@@ -90,7 +92,10 @@ class CertificateListActivity : AppCompatActivity() {
         tvCertificateDate.text = str_certificatedate
         tvCertificatePeriod.text = str_certificateperiod
         tvCertificateEtc.text = str_certificateetc
-        tvCertificateUrl.text = str_certificateurl
+        tvCertificateUrl.text = str_certificateurl+"\n"
+
+        //클릭한 자격증 이름으로 액션바 타이틀 변경
+        supportActionBar?.setTitle(tvCertificateName.text)
 
 
         //깃 주소로 가기(인터넷 주소 연결)

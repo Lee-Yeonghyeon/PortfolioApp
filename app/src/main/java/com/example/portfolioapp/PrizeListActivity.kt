@@ -71,7 +71,7 @@ class PrizeListActivity : AppCompatActivity() {
         sqlitedb = prize.readableDatabase
 
         var cursor: Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM prize;", null)
+        cursor = sqlitedb.rawQuery("SELECT * FROM prize WHERE name = '"+str_contestname+"';", null)
 
         if (cursor.moveToNext()) {
             str_prizename = cursor.getString((cursor.getColumnIndex("prizename"))).toString()
@@ -89,6 +89,9 @@ class PrizeListActivity : AppCompatActivity() {
         tvPrizeDate.text = str_prizedate
         tvPrizeContents.text = str_prizecontents
         tvPrizeUrl.text = str_prizeurl
+
+        //클릭한 수상 이름으로 액션바 타이틀 변경
+        supportActionBar?.setTitle(tvContestName.text)
 
         //깃 주소로 가기(인터넷 주소 연결)
         tvPrizeUrl.setOnClickListener{
