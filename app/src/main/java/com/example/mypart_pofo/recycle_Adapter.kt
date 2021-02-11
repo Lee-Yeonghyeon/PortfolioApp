@@ -12,22 +12,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.net.URL
 
-class recycle_Adapter(val context: Context, val actList: ArrayList<Act>, val itemClick: (Act) -> Unit) :
+class recycle_Adapter(val context: Context, val actList: ArrayList<Act>,val itemClick : (Act) -> Unit) :
     RecyclerView.Adapter<recycle_Adapter.Holder>(){
-
-    //lateinit var sqlitedb: SQLiteDatabase
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.rv_item, parent, false)
-        return Holder(view,itemClick)
+        return Holder(view, itemClick)
     }
 
     override fun getItemCount(): Int {
         return actList.size
     }
 
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        holder?.bind(actList[position], context)
+    }
 
-    inner class Holder(itemView: View? , itemClick : (Act) -> Unit) : RecyclerView.ViewHolder(itemView!!) {
+
+    inner class Holder(itemView: View?, itemClick: (Act) -> Unit ) : RecyclerView.ViewHolder(itemView!!) {
         val PhotoImg = itemView?.findViewById<ImageView>(R.id.PhotoImg)
         val actName = itemView?.findViewById<TextView>(R.id.actNametv)
         val actStartDate = itemView?.findViewById<TextView>(R.id.actStartDatetv)
@@ -41,7 +43,7 @@ class recycle_Adapter(val context: Context, val actList: ArrayList<Act>, val ite
             /* PhotoImg setImageResource에 들어갈 이미지의 id를 파일명(String)으로 찾고,
             이미지가 없는 경우 안드로이드 기본 아이콘을 표시한다.*/
             if (act.photo != "") {
-                val resourceId = context.resources.getIdentifier(act.photo, "drawable", context.packageName)
+                //val resourceId = context.resources.getIdentifier(act.photo, "drawable", context.packageName)
                 //PhotoImg?.setImageResource(uri) //뭐야...이미지 uri어떻게..
 
             /*
@@ -53,22 +55,22 @@ class recycle_Adapter(val context: Context, val actList: ArrayList<Act>, val ite
 
 
             } else {
-                PhotoImg?.setImageResource(R.mipmap.ic_launcher)
+                PhotoImg?.setImageResource(R.drawable.ic_baseline_adb_24)
             }
             /* 나머지 TextView와 String 데이터를 연결한다. */
             actName?.text = act.name
             actStartDate?.text = act.startDate
             actEndDate ?.text = act.EndDate
 
-            itemView.setOnClickListener { itemClick(act) }
+           itemView.setOnClickListener { itemClick(act) }
+
             /* (3) itemView가 클릭됐을 때 처리할 일을 itemClick으로 설정한다.
              (Act) -> Unit 에 대한 함수는 나중에 PotfolioFullView.kt 클래스에서 작성한다. */
         }
+
+
     }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder?.bind(actList[position], context)
-    }
 
 
 }

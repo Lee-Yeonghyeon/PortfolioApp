@@ -3,13 +3,15 @@ package com.example.mypart_pofo
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,8 +22,8 @@ class PortfolioFullViewActivity : AppCompatActivity(){
     //DB관련
     lateinit var portfolio: PorflioManager
     lateinit var sqlitedb: SQLiteDatabase
+
     lateinit var mRecyclerView : RecyclerView
-    lateinit var actName : String
 
     var actList = ArrayList<Act>()
 
@@ -29,65 +31,15 @@ class PortfolioFullViewActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio_full_view)
 
-        supportActionBar?.setTitle("포트폴리오 활동별로보기")
+        supportActionBar?.setTitle("활동별 모아보기")
 
         portfolio = PorflioManager(this,"portfolio",null,1)
         sqlitedb = portfolio.readableDatabase
-
-
-        mRecyclerView = findViewById(R.id.mRecyclerView)
-
-        //val intent= intent
-        //actName = intent.getStringExtra("intent_name")!!
-
 
         var actName:String=""
         var actDate_Start :String=""
         var actDate_End :String=""
         var actImage :String=""
-
-
-        var cursor : Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM portfolio;",null)
-        // WHERE name = '"+actName+"'
-        //actList = sqlitedb.rawQuery("SELECT * FROM portfolio;",null)
-
-
-        var num: Int =0
-        while(cursor.moveToNext()){
-            cursor.moveToFirst()
-            actName = cursor.getString(cursor.getColumnIndex("name")).toString()
-            actDate_Start = cursor.getString(cursor.getColumnIndex("startDate")).toString()
-            actDate_End = cursor.getString(cursor.getColumnIndex("EndDate")).toString()
-            actImage = cursor.getString(cursor.getColumnIndex("image")).toString()
-
-            actList.add(Act(actName,actDate_Start,actDate_End,actImage))
-
-        }
-
-        //어탭터랑 연결...?
-        val mAdapter = recycle_Adapter(this, actList){ act ->
-            val intent = Intent(this, PortfolioViewActivity::class.java)
-            intent.putExtra("intent_name", actName)
-            startActivity(intent)
-        }
-        /* 람다식{(Act) -> Unit} 부분을 추가하여 itemView의 setOnClickListener 에서 어떤 액션을 취할 지 설정해준다. */
-        mRecyclerView.adapter = mAdapter
-
-        val lm = LinearLayoutManager(this)
-        mRecyclerView.layoutManager = lm
-        mRecyclerView.setHasFixedSize(true)
-
-
-        cursor.close()
-        sqlitedb.close()
-        portfolio.close()
-
-
-        //dogList에 데이터를 추가
-        var dogList = arrayListOf<Act>(
-            Act("actName","actDate_Start","actDate_End","actImage")
-        )
 
 
         // Spinner 선언
@@ -98,16 +50,16 @@ class PortfolioFullViewActivity : AppCompatActivity(){
         var adapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,sData)
         spinner.adapter = adapter
 
-
-         /*
-       mRecyclerView. set{ parent, view, position, id ->
+        //어탭터랑 연결
+        mRecyclerView = findViewById(R.id.mRecyclerView)
+        val mAdapter = recycle_Adapter(this, actList) { act ->
             val intent = Intent(this, PortfolioViewActivity::class.java)
-            intent.putExtra("intent_name", str_prizeTitle)
+            intent.putExtra("intent_name", actName)
             startActivity(intent)
-        }*/
+        }
 
- 
 
+        val lm = LinearLayoutManager(this)
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -127,11 +79,53 @@ class PortfolioFullViewActivity : AppCompatActivity(){
                 var sortName : String = adapter.getItem(position).toString()
                 Log.d("myDB", "sort_Name : " + sortName)
 
-                Toast.makeText(this@PortfolioFullViewActivity,adapter.getItem(position)+"선택했습니다",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@PortfolioFullViewActivity,"선택된 항목: "+spinner.getItemAtPosition(position),Toast.LENGTH_SHORT).show()
+
+               var selected_sort :String = spinner.getItemAtPosition(position).toString()  //text 에 스피너의 값이 String으로 가져와집니다.
+                Log.d("myDB","selected_sort= "+selected_sort)
+
+
+                //항목별로 모아보기
 
                 portfolio = PorflioManager(this@PortfolioFullViewActivity,"portfolio",null,1)
                 sqlitedb = portfolio.readableDatabase
 
+                //var selected_sort :String =""
+
+                var cursor2 : Cursor
+                if(selected_sort=="전체"){
+                    cursor2=sqlitedb.rawQuery("SELECT * FROM portfolio;", null)
+                }else {
+
+                    cursor2 = sqlitedb.rawQuery("SELECT * FROM portfolio WHERE sort = '" + selected_sort + "';", null)
+                }
+
+                //리사이클러뷰를 새롭게 지우고 해당하는 종류의 대외활동을 보여준다.
+                actList.clear()
+
+
+                while(cursor2.moveToNext()){
+
+
+                        actName = cursor2.getString(cursor2.getColumnIndex("name")).toString()
+                        actDate_Start = cursor2.getString(cursor2.getColumnIndex("startDate")).toString()
+                        actDate_End = cursor2.getString(cursor2.getColumnIndex("EndDate")).toString()
+                        actImage = cursor2.getString(cursor2.getColumnIndex("image")).toString()
+
+                        actList.add(Act(actName,actDate_Start,actDate_End,actImage))
+
+
+                }
+
+                mRecyclerView.adapter = mAdapter
+
+                //val lm = LinearLayoutManager(this)
+                mRecyclerView.layoutManager = lm
+                mRecyclerView.setHasFixedSize(true)
+
+                cursor2.close()
+                sqlitedb.close()
+                portfolio.close()
 
             }
 
@@ -141,46 +135,7 @@ class PortfolioFullViewActivity : AppCompatActivity(){
 
         }
 
-        /*btn_Specify.setOnClickListener {
-            val intent = Intent(this, PortfolioViewActivity::class.java)
-            startActivity(intent)
-        }*/
-
     }
-
-    /*
-    private fun selectSort(): String {
-
-        var cursor2 : Cursor
-
-        portfolio = PorflioManager(this, "portfolio", null, 1)
-        sqlitedb = portfolio.readableDatabase
-        cursor2= sqlitedb.rawQuery( "SELECT FROM portfolio WHERE sort = '"+str_actName+"';",null)
-
-        while (cursor1.moveToNext()) {
-
-            var imageurl = cursor1.getString(cursor1.getColumnIndex("image")).toString()
-            photouri = imageurl
-            Log.d("myDB","photouri: " + photouri)
-
-        }
-
-        return photouri
-
-        cursor1.close()
-        sqlitedb.close()
-        portfolio.close()
-
-    }
-*/
-
-
-
-
-
-
-
-
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean { //각각 포트폴리오 기록창, PortfolioFullView 창으로 이동할 수 있도록 연결해주세요(액션바에 있는 아이콘임)

@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.*
 import java.net.URL
 
@@ -63,6 +64,9 @@ class PortfolioViewActivity : AppCompatActivity(){
         btn_viewP_modify = findViewById(R.id.btn_viewP_modify)
         btn_viewP_delete = findViewById(R.id.btn_viewP_delete)
 
+        //뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
 
         val intent= intent
         str_actName = intent.getStringExtra("intent_name")!!
@@ -157,29 +161,19 @@ class PortfolioViewActivity : AppCompatActivity(){
 
     }
 
-    /*
-    private fun getAllPhotos(): String {
-
-        var cursor1 : Cursor
-
-        portfolio = PorflioManager(this, "portfolio", null, 1)
-        sqlitedb = portfolio.readableDatabase
-        cursor1= sqlitedb.rawQuery( "SELECT FROM portfolio WHERE image = '"+str_actName+"';",null)
-
-        while (cursor1.moveToNext()) {
-
-            var imageurl = cursor1.getString(cursor1.getColumnIndex("image")).toString()
-            photouri = imageurl
-            Log.d("myDB","photouri: " + photouri)
-
+    //뒤로가기 버튼
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            android.R.id.home ->{
+                val intent = Intent(this,PortfolioFullViewActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else->{
+                return super.onOptionsItemSelected(item)
+            }
         }
+    }
 
-        return photouri
-
-        cursor1.close()
-        sqlitedb.close()
-        portfolio.close()
-
-    }*/
 
 }

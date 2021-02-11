@@ -12,6 +12,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -271,6 +272,22 @@ class WritePortfolioActivity : AppCompatActivity() {
             }
 
         }
+
+    //뒤로가기 버튼
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            android.R.id.home ->{
+                val intent = Intent(this,PortfolioFullViewActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else->{
+                return super.onOptionsItemSelected(item)
+            }
+        }
+    }
+
 
     // 절대경로 변환
     fun absolutelyPath(path: Uri): String {
