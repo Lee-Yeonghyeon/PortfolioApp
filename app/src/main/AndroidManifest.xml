@@ -19,6 +19,7 @@
         <activity android:name=".ReviseCertificateActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".WritePrizeActivity" />
+        <activity android:name=".PortfolioModifyActivity" />
         <activity android:name=".WriteCertificateActivity" />
         <activity android:name=".WritePortfolioActivity"/>
         <activity android:name=".PortfolioViewActivity"/>
