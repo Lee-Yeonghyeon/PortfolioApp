@@ -8,47 +8,63 @@
     android:layout_marginTop="5dp">
 
 
-    <ImageView
-        android:id="@+id/PhotoImg"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
     <TextView
         android:id="@+id/actNametv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/PhotoImg"
-        app:layout_constraintTop_toTopOf="@+id/PhotoImg"
-        tools:text="활동이름"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="활동이름" />
+
+
+    <TextView
+        android:id="@+id/actSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="활동 종류" />
 
     <TextView
         android:id="@+id/actStartDatetv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="35dp"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/PhotoImg"
-        app:layout_constraintStart_toStartOf="@+id/actNametv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="시작 날짜" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="238dp"
+        android:layout_marginTop="38dp"
+        android:text="~"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/actEndDatetv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="35dp"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/actStartDatetv"
-        app:layout_constraintStart_toEndOf="@+id/actStartDatetv"
-        app:layout_constraintTop_toTopOf="@+id/actStartDatetv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="종료 날짜" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:inputType="text"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,13 +57,22 @@
         android:id="@+id/tv_viewP_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="18dp"
         android:text="종료 날짜"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/tv_viewP_strat"
         app:layout_constraintTop_toBottomOf="@+id/tv_viewP_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text=" ~ "
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_viewP_strat"
+        app:layout_constraintTop_toBottomOf="@+id/tv_viewP_name" />
+
 
     <TextView
         android:id="@+id/textView6"
@@ -82,8 +91,9 @@
         android:id="@+id/tv_viewP_sort"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:inputType="text"
-        android:padding="20dp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/tv_viewP_strat" />
 
@@ -105,7 +115,7 @@
         android:id="@+id/tv_writeP_content"
         android:layout_width="250dp"
         android:layout_height="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="46dp"
         android:inputType="textImeMultiLine"
         android:minLines="3"
         android:textSize="18sp"
@@ -119,75 +129,23 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/scdream4"
-        android:text="자료첨부"
+        android:text="    url"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <ImageView
-        android:id="@+id/ImgV_viewP_picture"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="14dp"
-        android:text="사진 첨부"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/tv_writeP_content" />
-
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="120sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="140dp"
-        android:fontFamily="@font/scdream4"
-        android:maxLines="3"
-        android:text="     url"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
     <TextView
         android:id="@+id/tv_viewP_url"
         android:layout_width="250dp"
         android:layout_height="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:inputType="textImeMultiLine"
         android:minLines="3"
         android:textColor="@color/purple_200"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/ImgV_viewP_picture" />
-
-
-
-    <Button
-        android:id="@+id/btn_viewP_modify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="460dp"
-        android:text="수정"
-        android:fontFamily="@font/scdream4"
-        android:textSize="20sp"
-        android:background="@drawable/graybutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_viewP_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="460dp"
-        android:layout_marginEnd="100dp"
-        android:text="삭제"
-        android:fontFamily="@font/scdream4"
-        android:textSize="20sp"
-        android:background="@drawable/graybutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_writeP_content" />
 
     <LinearLayout
         android:layout_width="match_parent"

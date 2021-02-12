@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="시작 날짜"
+        android:text="  시작 날짜"
         android:fontFamily="@font/scdream4"
         android:textColor="@color/gray_dark"
         android:textSize="14sp"
@@ -141,62 +141,29 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/scdream4"
-        android:text="자료첨부"
+        android:text="     url"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
-    <Button
-        android:id="@+id/btn_modifyP_picture"
-        android:layout_width="100dp"
+    <EditText
+        android:id="@+id/edt_modifyP_url"
+        android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
-        android:text="사진 첨부"
-        android:background="@drawable/graybutton"
         android:fontFamily="@font/scdream4"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_content" />
 
-    <ImageView
-        android:id="@+id/modifyimageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_picture"
-        app:srcCompat="@android:color/background_light" />
 
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="124dp"
-        android:fontFamily="@font/scdream4"
-        android:text="     url"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-    <EditText
-        android:id="@+id/edt_modifyP_url"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/scdream4"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/modifyimageView" />
 
     <Button
         android:id="@+id/btn_modifyP_complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:text="수정완료"
         android:background="@drawable/pinkbutton"
         android:fontFamily="@font/scdream4"

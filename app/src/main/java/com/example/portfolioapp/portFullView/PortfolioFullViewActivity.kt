@@ -67,6 +67,7 @@ class PortfolioFullViewActivity : AppCompatActivity(){
 
         //변수 초기화
         var actName:String=""
+        var actSort:String=""
         var actDate_Start :String=""
         var actDate_End :String=""
         var actImage :String=""
@@ -105,11 +106,6 @@ class PortfolioFullViewActivity : AppCompatActivity(){
                     else -> null
                 }
 
-                var sortName : String = adapter.getItem(position).toString()
-                Log.d("myDB", "sort_Name : " + sortName)
-
-                Toast.makeText(this@PortfolioFullViewActivity,"선택된 항목: "+spinner.getItemAtPosition(position),Toast.LENGTH_SHORT).show()
-
                var selected_sort :String = spinner.getItemAtPosition(position).toString()  //text 에 스피너의 값이 String으로 가져와집니다.
                 Log.d("myDB","selected_sort= "+selected_sort)
 
@@ -117,7 +113,6 @@ class PortfolioFullViewActivity : AppCompatActivity(){
                 //항목별로 모아보기
                 portfolio = PorflioManager(this@PortfolioFullViewActivity,"portfolio",null,1)
                 sqlitedb = portfolio.readableDatabase
-
 
                 var cursor2 : Cursor
                 if(selected_sort=="전체"){
@@ -130,17 +125,17 @@ class PortfolioFullViewActivity : AppCompatActivity(){
                 //리사이클러뷰를 새롭게 지우고 해당하는 종류의 대외활동을 보여줍니다
                 actList.clear()
 
-
                 while(cursor2.moveToNext()){
 
 
                         actName = cursor2.getString(cursor2.getColumnIndex("name")).toString()
+                        actSort = cursor2.getString(cursor2.getColumnIndex("sort")).toString()
                         actDate_Start = cursor2.getString(cursor2.getColumnIndex("startDate")).toString()
                         actDate_End = cursor2.getString(cursor2.getColumnIndex("EndDate")).toString()
                         actImage = cursor2.getString(cursor2.getColumnIndex("image")).toString()
-                        actUrl = cursor2.getString(cursor2.getColumnIndex("url")).toString()
+                        //actUrl = cursor2.getString(cursor2.getColumnIndex("url")).toString()
 
-                        actList.add(Act(actName,actDate_Start,actDate_End,actImage,actUrl))  //해당 종류의 내용을 리사이클러뷰 목록에 보여줍니다.
+                        actList.add(Act(actName,actSort,actDate_Start,actDate_End))  //해당 종류의 내용을 리사이클러뷰 목록에 보여줍니다.
 
 
                 }

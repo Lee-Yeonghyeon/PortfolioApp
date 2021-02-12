@@ -11,7 +11,7 @@ class PorflioManager(
     version: Int
 ) : SQLiteOpenHelper (context,name,factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("CREATE TABLE portfolio (name text, startDate text, EndDate text, sort text , content text, image text, url text)")
+        db!!.execSQL("CREATE TABLE portfolio (name text, startDate text, EndDate text, sort text , content text, url text)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

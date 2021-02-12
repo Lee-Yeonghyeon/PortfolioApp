@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import com.example.portfolioapp.R
@@ -26,11 +27,7 @@ class PortfolioViewActivity : AppCompatActivity(){
     lateinit var tv_viewP_end : TextView
     lateinit var tv_viewP_sort : TextView
     lateinit var tv_writeP_content : TextView
-    lateinit var ImgV_viewP_picture : ImageView
     lateinit var tv_viewP_url : TextView
-
-    lateinit var btn_viewP_modify : Button
-    lateinit var btn_viewP_delete : Button
 
     //네비게이션바
     lateinit var nav_portfolio: ImageView
@@ -44,7 +41,7 @@ class PortfolioViewActivity : AppCompatActivity(){
     lateinit var str_actContent : String
     lateinit var str_image : String
     lateinit var str_url : String
-    lateinit var photourl: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,11 +58,9 @@ class PortfolioViewActivity : AppCompatActivity(){
         tv_viewP_end = findViewById(R.id.tv_viewP_end)
         tv_viewP_sort = findViewById(R.id.tv_viewP_sort)
         tv_writeP_content = findViewById(R.id.tv_writeP_content)
-        ImgV_viewP_picture = findViewById(R.id.ImgV_viewP_picture)
+
         tv_viewP_url = findViewById(R.id.tv_viewP_url)
 
-        btn_viewP_modify = findViewById(R.id.btn_viewP_modify)
-        btn_viewP_delete = findViewById(R.id.btn_viewP_delete)
 
         // 아래 버튼 3개
         nav_portfolio.setOnClickListener {
@@ -139,46 +134,39 @@ class PortfolioViewActivity : AppCompatActivity(){
         }
 
 
-        //이미지 출력
-        //ImgV_viewP_picture.setImageResource(str_image.toInt())
-
-        /*  var image_task: URLtoBitmapTask = URLtoBitmapTask()
-            image_task = URLtoBitmapTask().apply { url = URL(str_image) }
-            var bitmap: Bitmap = image_task.execute().get()
-            ImgV_viewP_picture.setImageBitmap(bitmap)*/
-
-
-
-        //수정하기 버튼을 눌렀을때
-        btn_viewP_modify.setOnClickListener {
-
-            //수정하는 페이지로 이동
-            val intent2 = Intent(this, PortfolioModifyActivity::class.java)
-            startActivity(intent2)
-
-        }
-
-
-        //삭제하기 버튼을 눌렀을때_DB에서 데이터 삭제
-        btn_viewP_delete.setOnClickListener {
-            portfolio = PorflioManager(this, "portfolio", null, 1)
-            sqlitedb = portfolio.readableDatabase
-            sqlitedb.execSQL( "DELETE FROM portfolio WHERE name = '"+str_actName+"';")
-
-            Toast.makeText(this, "삭제 완료", Toast.LENGTH_SHORT).show()  //토스트 메세지 출력
-
-            sqlitedb.close()
-            portfolio.close()
-
-            val intent = Intent(this, PortfolioFullViewActivity::class.java)  //활동별 모아보기로 넘어감
-            startActivity(intent)
-        }
-
     }
 
-    //뒤로가기 버튼작동
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_portfolio_view_modify,menu)
+        return true
+    }
+
+
+    //상단의 액션바에서 뒤로가기 및 삭제/수정 구현
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
+            //수정 버튼 클릭 시
+            R.id.action_portfolio_revise -> {
+                val intent2 = Intent(this, PortfolioModifyActivity::class.java)     //PortfolioModifyActivity로 넘어가 사용자가 상세내역을 수정하도록 함
+                startActivity(intent2)
+                return true
+            }
+            //삭제 버튼 클릭 시
+            R.id.action_portfolio_delete ->{
+                portfolio = PorflioManager(this, "portfolio", null, 1)
+                sqlitedb = portfolio.readableDatabase
+                sqlitedb.execSQL( "DELETE FROM portfolio WHERE name = '"+str_actName+"';")
+
+                Toast.makeText(this, "삭제 완료", Toast.LENGTH_SHORT).show()  //토스트 메세지 출력
+
+                sqlitedb.close()
+                portfolio.close()
+
+                val intent = Intent(this, PortfolioFullViewActivity::class.java)  //활동별 모아보기로 넘어감
+                startActivity(intent)
+                return true
+            }
+            //뒤로가기 버튼 클릭 시
             android.R.id.home ->{
                 val intent = Intent(this, PortfolioFullViewActivity::class.java)
                 startActivity(intent)

@@ -128,7 +128,7 @@ class PrizeListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             //삭제버튼 클릭시
-            R.id.action_prize_delete -> {
+            R.id.action_portfolio_delete -> {
                 prize = PrizeManager(this, "prize", null, 1)
                 sqlitedb = prize.readableDatabase
 
@@ -141,7 +141,7 @@ class PrizeListActivity : AppCompatActivity() {
                 return true
             }
             //수정버튼 클릭시
-            R.id.action_prize_revise ->{
+            R.id.action_portfolio_revise ->{
                 val intent = Intent(this, RevisePrizeActivity::class.java)                             //RevisePrizeActivity로 넘어가 사용자가 상세내역을 수정하도록 함
                 startActivity(intent)
                 return true

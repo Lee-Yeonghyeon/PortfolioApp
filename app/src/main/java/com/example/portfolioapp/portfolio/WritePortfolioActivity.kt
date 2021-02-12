@@ -112,10 +112,6 @@ class WritePortfolioActivity : AppCompatActivity() {
                     5 -> "기타"
                     else -> null
                 }
-
-
-                Toast.makeText(this@WritePortfolioActivity, adapter.getItem(position) + "선택했습니다", Toast.LENGTH_SHORT).show()
-                //선택한 항목 토스트 메세지 출력
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -157,7 +153,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             Log.d("myDB", "spinner: " + spinnerString)
             sqlitedb.close()
 
-            Log.d("myDB", "activiy_name_write: " + activity_name)
+
             //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
             val intent = Intent(this, PortfolioFullViewActivity::class.java)
             intent.putExtra("intent_name", activity_name)

@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_prize_revise"
+        android:id="@+id/action_portfolio_revise"
         android:title="수정"
         app:showAsAction="always">
     </item>
     <item
-        android:id="@+id/action_prize_delete"
+        android:id="@+id/action_portfolio_delete"
         android:icon="@drawable/ic_baseline_delete_24"
         android:title="@string/action_certificate_delete"
         app:showAsAction="always">
