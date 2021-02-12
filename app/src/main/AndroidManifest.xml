@@ -13,20 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortfolioApp">
-        <activity android:name=".PrizeListActivity"></activity>
-        <activity android:name=".RevisePrizeActivity" />
-        <activity android:name=".CertificateListActivity" />
-        <activity android:name=".ReviseCertificateActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".WritePrizeActivity" />
-        <activity android:name=".WriteCertificateActivity" />
-        <activity android:name=".WritePortfolioActivity"/>
-        <activity android:name=".PortfolioViewActivity"/>
-        <activity android:name=".CertificateViewActivity" />
-        <activity android:name=".PortfolioCalendarViewActivity" />
-        <activity android:name=".PortfolioFullViewActivity"/>
-        <activity android:name=".JoinActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".prize.PrizeListActivity"></activity>
+        <activity android:name=".prize.RevisePrizeActivity" />
+        <activity android:name=".certificate.CertificateListActivity" />
+        <activity android:name=".certificate.ReviseCertificateActivity" />
+        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".prize.WritePrizeActivity" />
+        <activity android:name=".certificate.WriteCertificateActivity" />
+        <activity android:name=".portfolio.WritePortfolioActivity"/>
+        <activity android:name=".portfolio.PortfolioViewActivity"/>
+        <activity android:name=".certprizeFullView.CertificateViewActivity" />
+        <activity android:name=".portCalendar.PortfolioCalendarViewActivity" />
+        <activity android:name=".portFullView.PortfolioFullViewActivity"/>
+        <activity android:name=".mainLogin.JoinActivity" />
+        <activity android:name=".mainLogin.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
