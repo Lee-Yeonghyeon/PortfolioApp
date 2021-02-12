@@ -22,27 +22,32 @@ import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 import java.util.*
 
 class WritePortfolioActivity : AppCompatActivity() {
+
     //변수 선언
     lateinit var edt_writeP_name: EditText
     lateinit var btn_writeP_selectDateStart: Button
     lateinit var calendarTextViewStart: TextView
     lateinit var btn_writeP_selectDateEnd: Button
     lateinit var calendarTextViewEnd: TextView
-    lateinit var spinner_writeP_sort: Spinner
     lateinit var edt_writeP_content: EditText
     lateinit var btn_writeP_picture: Button
-    lateinit var btn_writeP_file: Button
     lateinit var btn_writeP_complete: Button
     lateinit var imageView : ImageView
     lateinit var imageUri : String
-    lateinit var chPink : CheckBox
+    lateinit var edt_writeP_url : EditText
+
+    //네비게이션바
+    lateinit var nav_portfolio: ImageView
+    lateinit var nav_home: ImageView
+    lateinit var nav_certificate: ImageView
+
 
     //DB관련
     lateinit var portfolio: PorflioManager
     lateinit var sqlitedb: SQLiteDatabase
 
+    //갤러리 관련
     private val REQUEST_READ_EXTERNAL_STORAGE = 1000
-
     private val OPEN_GALLERY = 1
 
 
@@ -50,7 +55,7 @@ class WritePortfolioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_write_portfolio)
 
-        supportActionBar?.setTitle("포트폴리오 입력하기")
+        supportActionBar?.setTitle("활동 입력하기")
 
         //변수와 위젯 연결
         edt_writeP_name = findViewById(R.id.edt_writeP_name)
@@ -60,18 +65,33 @@ class WritePortfolioActivity : AppCompatActivity() {
         calendarTextViewEnd = findViewById(R.id.calendarTextViewEnd)
         edt_writeP_content = findViewById(R.id.edt_writeP_content)
         btn_writeP_picture = findViewById(R.id.btn_writeP_picture)
-        btn_writeP_file = findViewById(R.id.btn_writeP_file)
         btn_writeP_complete = findViewById(R.id.btn_writeP_complete)
         imageView = findViewById(R.id.imageView)
-        chPink = findViewById(R.id.cbPink)
+        edt_writeP_url = findViewById(R.id.edt_writeP_url)
 
-        //chPink.setOnCheckedChangeListener(this)
+        nav_portfolio = findViewById(R.id.nav_portfolio)
+        nav_home = findViewById(R.id.nav_home)
+        nav_certificate = findViewById(R.id.nav_certificate)
+
+        // 아래 버튼 3개
+        nav_portfolio.setOnClickListener {
+            val intent = Intent(this, PortfolioFullViewActivity::class.java)
+            startActivity(intent)
+        }
+        nav_home.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+        nav_certificate.setOnClickListener {
+            val intent = Intent(this, CertificateViewActivity::class.java)
+            startActivity(intent)
+        }
 
 
-        btn_writeP_picture.setOnClickListener { openGallery() }
+        btn_writeP_picture.setOnClickListener { openGallery() }  //사진 첨부를 눌렀을때 갤러리에서 사진을 가져옵니다
 
 
-        //spinner
+        //spinne관련
         val spinner_writeP_sort: Spinner = findViewById(R.id.spinner_writeP_sort)
 
         var sData = resources.getStringArray(R.array.list_array)
@@ -93,7 +113,7 @@ class WritePortfolioActivity : AppCompatActivity() {
 
 
                 Toast.makeText(this@WritePortfolioActivity, adapter.getItem(position) + "선택했습니다", Toast.LENGTH_SHORT).show()
-
+                //선택한 항목 토스트 메세지 출력
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -116,6 +136,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             var activity_date_start: String = ""
             var activity_date_end: String = ""
             var activity_content: String = edt_writeP_content.text.toString()
+            var activity_url : String = ""
 
             if (calendarTextViewStart.text !== null) {
                 activity_date_start = calendarTextViewStart.text.toString()
@@ -129,7 +150,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             sqlitedb = portfolio.writableDatabase
             sqlitedb.execSQL(
                     "INSERT INTO portfolio VALUES ('" + activity_name + "','"
-                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + imageUri + "');")
+                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + imageUri +"','" + activity_url+ "');")
             Log.d("myDB", "spinner: " + spinnerString)
             sqlitedb.close()
 
@@ -175,63 +196,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             picker.show()
         }
 
-        //체크박스 선택시 -> 색상 변경
-
-        //방법3
-
-        chPink.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                Toast.makeText(this, "PINK 선택됨", Toast.LENGTH_SHORT).show()
-                Log.d("myDB","ch 선택 in")
-            } else {
-                Toast.makeText(this, "PINK 해제됨", Toast.LENGTH_SHORT).show()
-                Log.d("myDB","ch 해제 in")
-            }
-            Log.d("myDB","ch in")
-        }
-
-        //방법1
-        /*chPink.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener() {
-
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // TODO Auto-generated method stub
-                Toast.makeText(t, buttonView.getText().toString()
-                            + "가 " + (isChecked ? "선택":"해제")+
-                "되었습니다.", 0).show();
-                if (isChecked) {
-                    chk2.setChecked(false); // 이 코드는 체크박스 1개가 선택되면 다른 1개는 해제되게하는 코드입니다.
-                }
-            }his
-        }*/
-
-
-        //방법2
-        /*var listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                when (buttonView.id) {
-                    R.id.cbPink -> {
-                        Toast.makeText(this,  "PINK 선택", Toast.LENGTH_SHORT).show()
-
-                        //
-                        //Toast.makeText(this@WritePortfolioActivity, adapter.getItem(position) + "선택했습니다", Toast.LENGTH_SHORT).show()
-                    }
-                    //나머지 색상들도....
-                }
-            } else {
-                //예외처리해주기!
-                when (buttonView.id) {
-                    R.id.cbPink -> {
-                        Toast.makeText(this, " PINK 해제", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }*/
-
-           // chPink.setOnCheckedChangeListener(listener)
-
-
-            //권한이 부여되었는지 확인인
+            //권한이 부여되었는지 확인
             if (ContextCompat.checkSelfPermission(
                             this,
                             Manifest.permission.READ_EXTERNAL_STORAGE
@@ -289,7 +254,7 @@ class WritePortfolioActivity : AppCompatActivity() {
     }
 
 
-    // 절대경로 변환
+    //image_url 절대경로 변환
     fun absolutelyPath(path: Uri): String {
         var result:String
         var cursor:Cursor = getContentResolver().query(path, null, null, null, null)!!
@@ -326,6 +291,7 @@ class WritePortfolioActivity : AppCompatActivity() {
         startActivityForResult(intent, OPEN_GALLERY)
     }
 
+    //image_url 절대경로
     fun getFullPathFromUri(fileUri: Uri?): String? {
         var fullPath: String? = null
         val column = "_data"

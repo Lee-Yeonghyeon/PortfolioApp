@@ -168,38 +168,25 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_writeP_picture"
         app:srcCompat="@android:color/background_light" />
 
-    <Button
-        android:id="@+id/btn_writeP_file"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/graybutton"
-        android:fontFamily="@font/scdream4"
-        android:text="파일 첨부"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_writeP_picture"
-        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_content" />
-
     <TextView
         android:id="@+id/textView25"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="130dp"
         android:fontFamily="@font/scdream4"
-        android:text="마커색상"
+        android:text="     url"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
-    <CheckBox
-        android:id="@+id/cbPink"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edt_writeP_url"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/scdream4"
-        android:text="pink"
-        android:textColor="@color/PINK"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -214,7 +201,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbPink" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_writeP_url" />
 
     <LinearLayout
         android:layout_width="match_parent"
