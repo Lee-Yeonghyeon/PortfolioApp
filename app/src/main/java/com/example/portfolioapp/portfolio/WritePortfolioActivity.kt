@@ -139,6 +139,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             var activity_date_end: String = ""
             var activity_content: String = edt_writeP_content.text.toString()
             var activity_url : String = edt_writeP_url.text.toString()
+            var activity_image : String = ""
 
             if (calendarTextViewStart.text !== null) {
                 activity_date_start = calendarTextViewStart.text.toString()
@@ -152,7 +153,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             sqlitedb = portfolio.writableDatabase
             sqlitedb.execSQL(
                     "INSERT INTO portfolio VALUES ('" + activity_name + "','"
-                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + imageUri +"','" + activity_url+ "');")
+                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + activity_image +"','" + activity_url+ "');")
             Log.d("myDB", "spinner: " + spinnerString)
             sqlitedb.close()
 

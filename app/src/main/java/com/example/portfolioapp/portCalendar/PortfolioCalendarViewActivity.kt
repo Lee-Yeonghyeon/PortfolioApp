@@ -43,6 +43,8 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio_calendar_view)
 
+        supportActionBar?.setTitle("날짜별 모아보기")
+
         calendarView = findViewById<CalendarView>(R.id.calendarView)
         tvDate = findViewById<TextView>(R.id.tv_date)
 

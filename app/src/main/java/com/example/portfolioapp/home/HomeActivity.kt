@@ -63,6 +63,7 @@ class HomeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        supportActionBar?.setTitle("홈")
 
         certificateview = findViewById(R.id.tv_certificateview)
         portfolioview = findViewById(R.id.tv_portfolioview)
