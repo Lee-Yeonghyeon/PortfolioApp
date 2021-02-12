@@ -37,13 +37,12 @@
 
             <ImageButton
                 android:id="@+id/btn_writePort"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginLeft="285dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp"
-                android:background="@color/gray_light"
-                android:src="@drawable/ic_baseline_create_24" />
+                android:src="@drawable/icon_pink_plus" />
         </LinearLayout>
         <ListView
             android:id="@+id/homeportListView"
@@ -86,15 +85,15 @@
                 android:textStyle="bold"
                 android:textColor="@color/pink_dark" />
 
-            <ImageButton
-                android:id="@+id/btn_writeCert"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="80dp"
-                android:background="@color/gray_light"
-                android:src="@drawable/ic_baseline_create_24" />
+                <ImageButton
+                    android:id="@+id/btn_writeCert"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray_light"
+                    android:src="@drawable/icon_pink_plus" />
 
             </LinearLayout>
 
@@ -116,15 +115,15 @@
                 android:textStyle="bold"
                 android:textColor="@color/pink_dark" />
 
-            <ImageButton
-                android:id="@+id/btn_writePrize"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="100dp"
-                android:background="@color/gray_light"
-                android:src="@drawable/ic_baseline_create_24" />
+                <ImageButton
+                    android:id="@+id/btn_writePrize"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gray_light"
+                    android:src="@drawable/icon_pink_plus" />
 
         </LinearLayout>
 
@@ -165,7 +164,7 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_gray" />
+            app:srcCompat="@drawable/nav_activity_gray" />
 
         <ImageView
             android:id="@+id/nav_home"

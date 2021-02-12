@@ -198,6 +198,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="수정완료"
+        android:background="@drawable/pinkbutton"
         android:fontFamily="@font/scdream4"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -213,7 +214,7 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_pink" />
+            app:srcCompat="@drawable/nav_activity_pink" />
 
         <ImageView
             android:id="@+id/nav_home"

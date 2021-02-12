@@ -15,7 +15,10 @@
         android:layout_gravity="center"
         android:layout_margin="40dp"
         android:layout_marginTop="32dp"
-        android:background="#DFA4A4"
+        android:background="#FFBCAC"
+        android:fontFamily="@font/scdream4"
+        android:textColor="@color/gray_dark"
+        android:textSize="22sp"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingTop="10dp"
@@ -29,9 +32,9 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/scdream4"
+            android:fontFamily="@font/scdream5"
             android:text="자격증"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="25sp" />
     </LinearLayout>
 
@@ -41,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:background="#E77964"
+        android:background="#F57373"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingTop="10dp"
@@ -55,9 +58,9 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/scdream4"
+            android:fontFamily="@font/scdream5"
             android:text="수상경력"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="25sp" />
     </LinearLayout>
 
@@ -70,7 +73,7 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_gray" />
+            app:srcCompat="@drawable/nav_activity_gray" />
 
         <ImageView
             android:id="@+id/nav_home"

@@ -57,9 +57,10 @@
         android:id="@+id/calendarTextViewStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:text="시작 날짜"
         android:fontFamily="@font/scdream4"
+        android:text="시작 날짜"
         android:textColor="@color/gray_dark"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/btn_writeP_selectDateStart"
@@ -81,6 +82,7 @@
         android:id="@+id/calendarTextViewEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/scdream4"
         android:text="종료 날짜"
@@ -197,6 +199,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="작성완료"
+        android:background="@drawable/pinkbutton"
         android:fontFamily="@font/scdream4"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -212,7 +215,7 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_pink" />
+            app:srcCompat="@drawable/nav_activity_pink" />
 
         <ImageView
             android:id="@+id/nav_home"

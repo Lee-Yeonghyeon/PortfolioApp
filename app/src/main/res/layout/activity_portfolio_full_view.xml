@@ -55,21 +55,22 @@
         android:background="@drawable/item_border"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="8dp">
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1">
     </androidx.recyclerview.widget.RecyclerView>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_pink" />
+            app:srcCompat="@drawable/nav_activity_pink" />
 
         <ImageView
             android:id="@+id/nav_home"

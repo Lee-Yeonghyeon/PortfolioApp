@@ -24,7 +24,8 @@
         <TextView
             android:id="@+id/certificatename"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +44,8 @@
         <TextView
             android:id="@+id/certificatedate"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,7 +63,8 @@
         <TextView
             android:id="@+id/certificateperiod"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,7 +82,8 @@
         <TextView
             android:id="@+id/certificateetc"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -116,7 +120,8 @@
             android:id="@+id/certificateurl"
             android:textColor="@color/purple_200"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -127,7 +132,7 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_gray" />
+            app:srcCompat="@drawable/nav_activity_gray" />
 
         <ImageView
             android:id="@+id/nav_home"

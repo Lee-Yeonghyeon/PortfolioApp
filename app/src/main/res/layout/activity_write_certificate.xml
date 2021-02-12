@@ -59,6 +59,7 @@
         android:id="@+id/edt_writeC_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="2XXX-XX-XX"
         app:layout_constraintBottom_toBottomOf="@+id/btn_writeC_selectDate"
         app:layout_constraintStart_toEndOf="@+id/btn_writeC_selectDate" />
@@ -194,7 +195,7 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_gray" />
+            app:srcCompat="@drawable/nav_activity_gray" />
 
         <ImageView
             android:id="@+id/nav_home"

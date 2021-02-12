@@ -43,7 +43,7 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_portfolio_pink" />
+            app:srcCompat="@drawable/nav_activity_pink" />
 
         <ImageView
             android:id="@+id/nav_home"
