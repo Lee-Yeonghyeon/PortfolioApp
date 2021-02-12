@@ -1,4 +1,4 @@
-package com.example.portfolioapp
+package com.example.portfolioapp.portFullView
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -11,6 +11,13 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.portfolioapp.R
+import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
+import com.example.portfolioapp.home.HomeActivity
+import com.example.portfolioapp.portCalendar.PortfolioCalendarViewActivity
+import com.example.portfolioapp.portfolio.PorflioManager
+import com.example.portfolioapp.portfolio.PortfolioViewActivity
+import com.example.portfolioapp.portfolio.WritePortfolioActivity
 
 
 class PortfolioFullViewActivity : AppCompatActivity(){
@@ -163,12 +170,12 @@ class PortfolioFullViewActivity : AppCompatActivity(){
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.addPortfolio -> {  //활동 추가하기 버튼 클릭시 이동합니다
-                val intent = Intent(this,WritePortfolioActivity::class.java)
+                val intent = Intent(this, WritePortfolioActivity::class.java)
                 startActivity(intent)
                 return true
             }
             R.id.moveCalendar -> {  //달력 화면으로 이동합니다
-                val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+                val intent = Intent(this, PortfolioCalendarViewActivity::class.java)
                 startActivity(intent)
                 return true
             }

@@ -1,4 +1,5 @@
 package com.example.portfolioapp.portfolio
+
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.database.Cursor
@@ -9,6 +10,8 @@ import android.util.Log
 import android.view.MenuItem
 import android.widget.*
 import com.example.portfolioapp.R
+import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
+import com.example.portfolioapp.home.HomeActivity
 import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 
 class PortfolioViewActivity : AppCompatActivity(){

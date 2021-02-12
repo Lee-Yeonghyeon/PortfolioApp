@@ -1,4 +1,4 @@
-package com.example.portfolioapp
+package com.example.portfolioapp.portFullView
 /*리사이클뷰 어댑터 선언*/
 import android.content.Context
 import android.database.Cursor

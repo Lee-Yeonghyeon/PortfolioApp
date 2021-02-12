@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.portfolioapp.R
+import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
+import com.example.portfolioapp.home.HomeActivity
 import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 import java.util.*
 

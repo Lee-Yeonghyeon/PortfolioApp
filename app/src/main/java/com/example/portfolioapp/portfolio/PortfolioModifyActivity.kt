@@ -1,4 +1,4 @@
-package com.example.portfolioapp
+package com.example.portfolioapp.portfolio
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -12,6 +12,10 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.portfolioapp.R
+import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
+import com.example.portfolioapp.home.HomeActivity
+import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 import java.util.*
 
 

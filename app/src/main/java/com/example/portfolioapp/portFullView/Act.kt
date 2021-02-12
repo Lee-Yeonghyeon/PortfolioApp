@@ -1,4 +1,4 @@
-package com.example.portfolioapp
+package com.example.portfolioapp.portFullView
 /* Act.kt*/
 
 //데이터 클래스 정의
