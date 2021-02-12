@@ -161,6 +161,7 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/scdream4"
         android:inputType="textImeMultiLine"
+        android:textColor="@color/purple_200"
         android:minLines="3"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView9"

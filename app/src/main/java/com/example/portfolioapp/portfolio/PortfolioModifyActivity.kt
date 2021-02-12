@@ -84,7 +84,6 @@ class PortfolioModifyActivity  : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         //스피너 연결
         var sData = resources.getStringArray(R.array.list_array)
         var adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, sData)
@@ -107,6 +106,7 @@ class PortfolioModifyActivity  : AppCompatActivity() {
 
                 Toast.makeText(this@PortfolioModifyActivity, adapter.getItem(position) + "선택했습니다", Toast.LENGTH_SHORT).show()
                 //선택한 항목 토스트 메세지 출력
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -114,7 +114,6 @@ class PortfolioModifyActivity  : AppCompatActivity() {
             }
 
         }
-
 
         //뒤로가기
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -153,25 +152,20 @@ class PortfolioModifyActivity  : AppCompatActivity() {
             picker.show()
         }
 
-
-
-        //DB
-        portfolio = PorflioManager(this, "portfolio", null, 1)
-        sqlitedb = portfolio.writableDatabase
-
-
-
         //사진첨부 클릭시
         btn_modifyP_picture.setOnClickListener {
             openGallery()
         }
+
+        //DB
+        portfolio = PorflioManager(this,"portfolio",null,1)
+        sqlitedb = portfolio.writableDatabase
 
         //수정완료 버튼 클릭시
         btn_modifyP_complete.setOnClickListener {
             var str_modi_name : String = edt_modifyP_name.text.toString()
             var str_modi_starDate : String = ""
             var str_modi_endDate :String = ""
-            var str_modi_sort: String = spinner_modifyP_sort.toString()
             var str_modi_content : String = edt_modifyP_content.text.toString()
             var str_modi_image : String = ""
             var str_modi_url : String = edt_modifyP_url.text.toString()
@@ -184,10 +178,12 @@ class PortfolioModifyActivity  : AppCompatActivity() {
                 str_modi_endDate = modifycalendarTextViewEnd.text.toString()
             }
 
+            var str_modi_sort = spinner_modifyP_sort.selectedItem  //spinner에서 선택한 text를 받는 변수 선언
+
             sqlitedb = portfolio.writableDatabase
             sqlitedb.execSQL(  //수정 시 관련 내용 DB에 UPDATE
                     "UPDATE portfolio SET startDate='" + str_modi_starDate + "', EndDate='"
-                            + str_modi_endDate + "',sort='" + str_modi_sort+"', content='"
+                            + str_modi_endDate +"', sort='" + str_modi_sort + "', content='"
                             +str_modi_content + "',image='" + str_modi_image+"', url='"
                             +str_modi_url + "' WHERE name = '" + str_modi_name + "';"
             )

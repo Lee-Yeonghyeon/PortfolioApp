@@ -114,7 +114,7 @@ class PortfolioViewActivity : AppCompatActivity(){
         str_image = cursor.getString(cursor.getColumnIndex("image")).toString()
         str_url = cursor.getString(cursor.getColumnIndex("url")).toString()
 
-        Log.d("myDB", "str_image : " + str_image)
+        Log.d("myDB", "str_url : " + str_url)
 
         cursor.close()
         sqlitedb.close()

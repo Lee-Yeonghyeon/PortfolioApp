@@ -16,6 +16,7 @@ import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
 import com.example.portfolioapp.home.HomeActivity
 import com.example.portfolioapp.portCalendar.PortfolioCalendarViewActivity
 import com.example.portfolioapp.portfolio.PorflioManager
+import com.example.portfolioapp.portfolio.PortfolioModifyActivity
 import com.example.portfolioapp.portfolio.PortfolioViewActivity
 import com.example.portfolioapp.portfolio.WritePortfolioActivity
 
@@ -69,6 +70,7 @@ class PortfolioFullViewActivity : AppCompatActivity(){
         var actDate_Start :String=""
         var actDate_End :String=""
         var actImage :String=""
+        var actUrl : String =""
 
 
         // Spinner 선언
@@ -136,8 +138,9 @@ class PortfolioFullViewActivity : AppCompatActivity(){
                         actDate_Start = cursor2.getString(cursor2.getColumnIndex("startDate")).toString()
                         actDate_End = cursor2.getString(cursor2.getColumnIndex("EndDate")).toString()
                         actImage = cursor2.getString(cursor2.getColumnIndex("image")).toString()
+                        actUrl = cursor2.getString(cursor2.getColumnIndex("url")).toString()
 
-                        actList.add(Act(actName,actDate_Start,actDate_End,actImage))  //해당 종류의 내용을 리사이클러뷰 목록에 보여줍니다.
+                        actList.add(Act(actName,actDate_Start,actDate_End,actImage,actUrl))  //해당 종류의 내용을 리사이클러뷰 목록에 보여줍니다.
 
 
                 }
