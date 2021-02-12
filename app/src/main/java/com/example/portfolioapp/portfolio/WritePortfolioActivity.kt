@@ -138,7 +138,7 @@ class WritePortfolioActivity : AppCompatActivity() {
             var activity_date_start: String = ""
             var activity_date_end: String = ""
             var activity_content: String = edt_writeP_content.text.toString()
-            var activity_url : String = edt_writeP_url.toString()
+            var activity_url : String = edt_writeP_url.text.toString()
 
             if (calendarTextViewStart.text !== null) {
                 activity_date_start = calendarTextViewStart.text.toString()

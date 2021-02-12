@@ -104,6 +104,7 @@ class PortfolioViewActivity : AppCompatActivity(){
         str_actDay_End=""
         str_actSort=""
         str_actContent=""
+        str_url=""
 
         //해당 선택한 활동 내용 읽어오기
         cursor.moveToFirst()  //cursor를 처음으로 이동
