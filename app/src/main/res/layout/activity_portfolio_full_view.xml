@@ -62,27 +62,26 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_activity_pink" />
+            app:srcCompat="@drawable/nav_activity_gray" />
 
         <ImageView
             android:id="@+id/nav_home"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_home_gray" />
+            app:srcCompat="@drawable/nav_home_pink" />
 
         <ImageView
             android:id="@+id/nav_certificate"
             android:layout_width="138dp"
             android:layout_height="64dp"
             app:srcCompat="@drawable/nav_certificate_gray" />
+
     </LinearLayout>
 
 </LinearLayout>

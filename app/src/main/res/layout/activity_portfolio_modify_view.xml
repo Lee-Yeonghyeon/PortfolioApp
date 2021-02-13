@@ -57,13 +57,12 @@
         android:id="@+id/modifycalendarTextViewStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="  시작 날짜"
         android:fontFamily="@font/scdream4"
+        android:text="2XXX-XX-XX"
         android:textColor="@color/gray_dark"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateStart"
-        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_name" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_modifyP_selectDateStart"
+        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateStart" />
 
     <Button
         android:id="@+id/btn_modifyP_selectDateEnd"
@@ -81,32 +80,31 @@
         android:id="@+id/modifycalendarTextViewEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/scdream4"
-        android:text="종료 날짜"
+        android:text="2XXX-XX-XX"
         android:textColor="@color/gray_dark"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateEnd"
-        app:layout_constraintTop_toBottomOf="@+id/modifycalendarTextViewStart" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_modifyP_selectDateEnd"
+        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateEnd" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="활동 종류"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/scdream4"
+        android:text="활동 종류"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_selectDateEnd" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <Spinner
         android:id="@+id/spinner_modifyP_sort"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="8dp"
         android:text="활동 선택"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_selectDateEnd" />
@@ -116,9 +114,9 @@
         android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="활동 내용"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/scdream4"
+        android:text="활동 내용"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,9 +137,22 @@
         android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/scdream4"
-        android:text="     url"
+        android:text="자료첨부"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="url"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,30 +160,57 @@
 
     <EditText
         android:id="@+id/edt_modifyP_url"
-        android:layout_width="250dp"
-        android:layout_height="35dp"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/scdream4"
+        android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintStart_toEndOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_content" />
 
+    <Button
+        android:id="@+id/btn_modifyP_picture"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream4"
+        android:text="사진 첨부"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_url" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_picture"
+        app:srcCompat="@android:color/background_light"
+        tools:srcCompat="@tools:sample/avatars" />
 
 
     <Button
         android:id="@+id/btn_modifyP_complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="수정완료"
+        android:layout_marginTop="120dp"
         android:background="@drawable/pinkbutton"
         android:fontFamily="@font/scdream4"
+        android:text="수정완료"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_url" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_picture" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
