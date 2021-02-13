@@ -2,24 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.portfolioapp">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>  //갤러리 접근 권한 관련
+    <uses-permission android:name="android.permission.CAMERA"/>     //카메라 이용 권한 관련
+    <uses-permission android:name="android.permission.INTERNET" />  //인터넷 연결 권한 관련
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_pofo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_pofo"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortfolioApp">
-        <activity android:name=".WritePrizeActivity"></activity>
-        <activity android:name=".WriteCertificateActivity" />
-        <activity android:name=".CertificateViewActivity" />
-        <activity android:name=".WriteDailyPortfolioActivity" />
-        <activity android:name=".WritePortfolioActivity" />
-        <activity android:name=".PortfolioViewActivity" />
-        <activity android:name=".PortfolioFullViewActivity" />
-        <activity android:name=".PortfolioCalendarViewActivity" />
-        <activity android:name=".JoinActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".prize.PrizeListActivity"></activity>
+        <activity android:name=".prize.RevisePrizeActivity" />
+        <activity android:name=".certificate.CertificateListActivity" />
+        <activity android:name=".certificate.ReviseCertificateActivity" />
+        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".prize.WritePrizeActivity" />
+        <activity android:name=".portfolio.PortfolioModifyActivity" />
+        <activity android:name=".certificate.WriteCertificateActivity" />
+        <activity android:name=".portfolio.WritePortfolioActivity"/>
+        <activity android:name=".portfolio.PortfolioViewActivity"/>
+        <activity android:name=".certprizeFullView.CertificateViewActivity" />
+        <activity android:name=".portCalendar.PortfolioCalendarViewActivity" />
+        <activity android:name=".portFullView.PortfolioFullViewActivity"/>
+        <activity android:name=".mainLogin.JoinActivity" />
+        <activity android:name=".mainLogin.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

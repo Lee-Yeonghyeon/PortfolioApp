@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+ xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/addPortfolio"
-        android:icon="@drawable/ic_baseline_adb_24"
-        android:title="addPortfolio"
+        android:id="@+id/action_write_portfolio"
+        android:icon="@drawable/icon_white_plus"
+        android:title="@string/action_write_portfolio"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/moveFullView"
-        android:icon="@drawable/ic_baseline_adb_24"
-        android:title="moveFullView"
+        android:id="@+id/action_portfullview"
+        android:icon="@drawable/icon_white_activity"
+        android:title="@string/action_portfullview"
         app:showAsAction="ifRoom" />
 </menu>

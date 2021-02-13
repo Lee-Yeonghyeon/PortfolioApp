@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".portfolio.WritePortfolioActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="활동명"
+        android:fontFamily="@font/scdream4"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_modifyP_name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="날짜(기간)"
+        android:fontFamily="@font/scdream4"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/btn_modifyP_selectDateStart"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:text="시작날짜 선택"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream4"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_name" />
+
+    <TextView
+        android:id="@+id/modifycalendarTextViewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/scdream4"
+        android:text="2XXX-XX-XX"
+        android:textColor="@color/gray_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_modifyP_selectDateStart"
+        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateStart" />
+
+    <Button
+        android:id="@+id/btn_modifyP_selectDateEnd"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:text="종료날짜 선택"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream4"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_selectDateStart" />
+
+    <TextView
+        android:id="@+id/modifycalendarTextViewEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/scdream4"
+        android:text="2XXX-XX-XX"
+        android:textColor="@color/gray_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_modifyP_selectDateEnd"
+        app:layout_constraintStart_toEndOf="@+id/btn_modifyP_selectDateEnd" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/scdream4"
+        android:text="활동 종류"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <Spinner
+        android:id="@+id/spinner_modifyP_sort"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="활동 선택"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_selectDateEnd" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/scdream4"
+        android:text="활동 내용"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <EditText
+        android:id="@+id/edt_modifyP_content"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="textImeMultiLine"
+        android:minLines="3"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_modifyP_sort" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="자료첨부"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/scdream4"
+        android:text="url"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <EditText
+        android:id="@+id/edt_modifyP_url"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/scdream4"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_content" />
+
+    <Button
+        android:id="@+id/btn_modifyP_picture"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/graybutton"
+        android:fontFamily="@font/scdream4"
+        android:text="사진 첨부"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/edt_modifyP_url" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_picture"
+        app:srcCompat="@android:color/background_light"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <Button
+        android:id="@+id/btn_modifyP_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/pinkbutton"
+        android:fontFamily="@font/scdream4"
+        android:text="수정완료"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_modifyP_picture" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/nav_portfolio"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_activity_pink" />
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_home_gray" />
+
+        <ImageView
+            android:id="@+id/nav_certificate"
+            android:layout_width="138dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/nav_certificate_gray" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
