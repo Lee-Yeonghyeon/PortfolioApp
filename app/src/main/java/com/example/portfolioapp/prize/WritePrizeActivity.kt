@@ -43,6 +43,8 @@ class WritePrizeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_write_prize)
 
+        supportActionBar?.setTitle("수상내역 입력하기")
+
         //xml과 연결
         edt_writeP_contestName = findViewById(R.id.edt_writeP_contestName)
         edt_writeP_prizeName = findViewById(R.id.edt_writeP_prizeName)
@@ -59,7 +61,6 @@ class WritePrizeActivity : AppCompatActivity() {
         nav_home = findViewById(R.id.nav_home)
         nav_certificate = findViewById(R.id.nav_certificate)
 
-        supportActionBar?.setTitle("수상내역 입력하기")
 
         //뒤로가기 버튼
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -144,6 +145,8 @@ class WritePrizeActivity : AppCompatActivity() {
         intent.setType("image/*")                                   //sdcard의 images를 받아옴
         startActivityForResult(intent,OPEN_GALLERY)                  //갤러리를 열기
     }
+
+
 
     //갤러리에 연동해서 Uri가져오기 -> 작성한 페이지에 사진이 보여짐
     @Override

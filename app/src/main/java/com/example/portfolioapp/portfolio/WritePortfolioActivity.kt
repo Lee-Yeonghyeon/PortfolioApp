@@ -1,4 +1,5 @@
 package com.example.portfolioapp.portfolio
+
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
@@ -75,6 +76,10 @@ class WritePortfolioActivity : AppCompatActivity() {
         nav_home = findViewById(R.id.nav_home)
         nav_certificate = findViewById(R.id.nav_certificate)
 
+        //뒤로가기 버튼
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+
         // 아래 버튼 3개
         nav_portfolio.setOnClickListener {
             val intent = Intent(this, PortfolioFullViewActivity::class.java)
@@ -89,81 +94,8 @@ class WritePortfolioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        btn_writeP_picture.setOnClickListener { openGallery() }  //사진 첨부를 눌렀을때 갤러리에서 사진을 가져옵니다
-
-
-        //spinne관련
-        val spinner_writeP_sort: Spinner = findViewById(R.id.spinner_writeP_sort)
-
-        var sData = resources.getStringArray(R.array.list_array)
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, sData)
-        spinner_writeP_sort.adapter = adapter
-
-        spinner_writeP_sort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                //아이템이 클릭 되면 맨 위부터 position 0번부터 순서대로 동작하게 됩니다.
-                when (position) {
-                    0 -> "전체"
-                    1 -> "대외활동"
-                    2 -> "공모전"
-                    3 -> "동아리"
-                    4 -> "교내활동"
-                    5 -> "기타"
-                    else -> null
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                println("활동 종류를 선택하세요")
-            }
-
-        }
-
-        //뒤로가기 버튼
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
-
-
         //DB연동
         portfolio = PorflioManager(this, "portfolio", null, 1)
-
-        //작성완료 버튼을 눌렀을때
-        btn_writeP_complete.setOnClickListener {
-            var activity_name: String = edt_writeP_name.text.toString()
-            var activity_date_start: String = ""
-            var activity_date_end: String = ""
-            var activity_content: String = edt_writeP_content.text.toString()
-            var activity_url : String = edt_writeP_url.text.toString()
-            var activity_image : String = ""
-
-            if (calendarTextViewStart.text !== null) {
-                activity_date_start = calendarTextViewStart.text.toString()
-            }
-
-            if (calendarTextViewEnd.text !== null) {
-                activity_date_end = calendarTextViewEnd.text.toString()
-            }
-
-            var spinnerString = spinner_writeP_sort.selectedItem
-            sqlitedb = portfolio.writableDatabase
-            sqlitedb.execSQL(
-                    "INSERT INTO portfolio VALUES ('" + activity_name + "','"
-                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + activity_image +"','" + activity_url+ "');")
-            Log.d("myDB", "spinner: " + spinnerString)
-            sqlitedb.close()
-
-
-            //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
-            val intent = Intent(this, PortfolioFullViewActivity::class.java)
-            intent.putExtra("intent_name", activity_name)
-            startActivity(intent)
-
-            //작성완료 토스트 메세지
-            Toast.makeText(this, "작성 완료", Toast.LENGTH_SHORT).show()
-
-        }
-
 
         //날짜선택 시 캘린더 나오기(시작날짜)
         btn_writeP_selectDateStart.setOnClickListener {
@@ -194,50 +126,121 @@ class WritePortfolioActivity : AppCompatActivity() {
             var picker = DatePickerDialog(this, listener, year, month, date)
             picker.show()
         }
+        btn_writeP_picture.setOnClickListener { openGallery() }  //사진 첨부를 눌렀을때 갤러리에서 사진을 가져옵니다
 
-            //권한이 부여되었는지 확인
-            if (ContextCompat.checkSelfPermission(
+
+        //spinner관련
+        val spinner_writeP_sort: Spinner = findViewById(R.id.spinner_writeP_sort)
+
+        var sData = resources.getStringArray(R.array.list_array)
+        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, sData)
+        spinner_writeP_sort.adapter = adapter
+
+        spinner_writeP_sort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                //아이템이 클릭 되면 맨 위부터 position 0번부터 순서대로 동작하게 됩니다.
+                when (position) {
+                    0 -> "전체"
+                    1 -> "대외활동"
+                    2 -> "공모전"
+                    3 -> "동아리"
+                    4 -> "교내활동"
+                    5 -> "기타"
+                    else -> null
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("활동 종류를 선택하세요")
+            }
+
+        }
+
+
+
+        //작성완료 버튼을 눌렀을때
+        btn_writeP_complete.setOnClickListener {
+            var activity_name: String = edt_writeP_name.text.toString()
+            var activity_date_start: String = ""
+            var activity_date_end: String = ""
+            var activity_content: String = edt_writeP_content.text.toString()
+            var activity_url : String = edt_writeP_url.text.toString()
+            var activity_image : String = ""
+
+            if (calendarTextViewStart.text !== null) {
+                activity_date_start = calendarTextViewStart.text.toString()
+            }
+
+            if (calendarTextViewEnd.text !== null) {
+                activity_date_end = calendarTextViewEnd.text.toString()
+            }
+
+            var spinnerString = spinner_writeP_sort.selectedItem
+
+            sqlitedb = portfolio.writableDatabase
+            sqlitedb.execSQL(
+                    "INSERT INTO portfolio VALUES ('" + activity_name + "','"
+                            + activity_date_start + "','" + activity_date_end + "','" + spinnerString + "','" + activity_content + "', '" + activity_image +"','" + activity_url+ "');")
+            Log.d("myDB", "spinner: " + spinnerString)
+            sqlitedb.close()
+
+
+            //작성완료 토스트 메세지
+            Toast.makeText(this, "작성 완료", Toast.LENGTH_SHORT).show()
+
+            //작성완료 버튼 누르면 -> 포트폴리오 월별 보기로 넘어감
+            val intent = Intent(this, PortfolioFullViewActivity::class.java)
+            intent.putExtra("intent_name", activity_name)
+            startActivity(intent)
+
+
+        }
+
+
+
+
+        //권한이 부여되었는지 확인
+        if (ContextCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                ) != PackageManager.PERMISSION_GRANTED
+        )
+
+        //권한이 허용되지 않음
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
                             this,
                             Manifest.permission.READ_EXTERNAL_STORAGE
-                    ) != PackageManager.PERMISSION_GRANTED
-            )
-
-            //권한이 허용되지 않음
-                if (ActivityCompat.shouldShowRequestPermissionRationale(
-                                this,
-                                Manifest.permission.READ_EXTERNAL_STORAGE
-                        )
-                ) {
-                    //이전에 거부한 적이 있으면
-                    var dlg = AlertDialog.Builder(this)
-                    dlg.setTitle("사진 권한")
-                    dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수적으로 필요합니다")
-                    dlg.setPositiveButton("확인") { dialog, which ->
-                        ActivityCompat.requestPermissions(
-                                this@WritePortfolioActivity
-                                ,
-                                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                                REQUEST_READ_EXTERNAL_STORAGE
-                        )
-                        dlg.setNegativeButton("취소", null)
-                        dlg.show()
-                    }
-                } else {
-                    //처음 권한 요청하는 경우
+                    )
+            ) {
+                //이전에 거부한 적이 있으면
+                var dlg = AlertDialog.Builder(this)
+                dlg.setTitle("사진 권한")
+                dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수적으로 필요합니다")
+                dlg.setPositiveButton("확인") { dialog, which ->
                     ActivityCompat.requestPermissions(
                             this@WritePortfolioActivity
                             ,
                             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                             REQUEST_READ_EXTERNAL_STORAGE
                     )
-                } else {
-                //권한이 이미 허용된 경우
-
-            }
+                    dlg.setNegativeButton("취소", null)
+                    dlg.show()
+                }
+            } else {
+                //처음 권한 요청하는 경우
+                ActivityCompat.requestPermissions(
+                        this@WritePortfolioActivity
+                        ,
+                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                        REQUEST_READ_EXTERNAL_STORAGE
+                )
+            } else {
+            //권한이 이미 허용된 경우
 
         }
 
-    //뒤로가기 버튼
+    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
@@ -311,11 +314,11 @@ class WritePortfolioActivity : AppCompatActivity() {
                 val projection = arrayOf(column)
                 try {
                     cursor = getContentResolver().query(
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                        projection,
-                        MediaStore.Images.Media._ID + " = ? ",
-                        arrayOf(document_id),
-                        null
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                            projection,
+                            MediaStore.Images.Media._ID + " = ? ",
+                            arrayOf(document_id),
+                            null
                     )!!
                     if (cursor != null) {
                         cursor.moveToFirst()
@@ -361,7 +364,6 @@ class WritePortfolioActivity : AppCompatActivity() {
 }
 
 
-   
 
 
 

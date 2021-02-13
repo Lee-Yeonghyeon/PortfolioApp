@@ -68,13 +68,13 @@
             android:id="@+id/nav_portfolio"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_activity_gray" />
+            app:srcCompat="@drawable/nav_activity_pink" />
 
         <ImageView
             android:id="@+id/nav_home"
             android:layout_width="138dp"
             android:layout_height="64dp"
-            app:srcCompat="@drawable/nav_home_pink" />
+            app:srcCompat="@drawable/nav_home_gray" />
 
         <ImageView
             android:id="@+id/nav_certificate"
