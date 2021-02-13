@@ -10,10 +10,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
 import com.example.portfolioapp.R
 import com.example.portfolioapp.portCalendar.PortfolioCalendarViewActivity
 import com.example.portfolioapp.home.HomeActivity
+import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 
 
 class PrizeListActivity : AppCompatActivity() {
@@ -60,15 +62,15 @@ class PrizeListActivity : AppCompatActivity() {
         nav_certificate = findViewById(R.id.nav_certificate)
 
         nav_portfolio.setOnClickListener {
-            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            val intent = Intent(this, PortfolioFullViewActivity::class.java)
             startActivity(intent)
         }
         nav_home.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
         nav_certificate.setOnClickListener {
-            val intent = Intent(this,CertificateViewActivity::class.java)
+            val intent = Intent(this, CertificateViewActivity::class.java)
             startActivity(intent)
         }
 
@@ -135,6 +137,8 @@ class PrizeListActivity : AppCompatActivity() {
                 sqlitedb.execSQL("DELETE FROM prize WHERE name='" + str_contestname + "';")                 //prize라는 테이블에서 클릭한 name값에 따라 해당 행을 삭제하는 sql문
                 sqlitedb.close()
                 prize.close()
+
+                Toast.makeText(this,"삭제 완료", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this, CertificateViewActivity::class.java)                      //삭제하면 CertificateVieActivity로 넘어가서 삭제됨을 바로 확인
                 startActivity(intent)

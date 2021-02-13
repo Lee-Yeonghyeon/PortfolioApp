@@ -15,6 +15,7 @@ import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
 import com.example.portfolioapp.R
 import com.example.portfolioapp.portCalendar.PortfolioCalendarViewActivity
 import com.example.portfolioapp.home.HomeActivity
+import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 import java.util.*
 
 class WriteCertificateActivity : AppCompatActivity() {
@@ -66,15 +67,15 @@ class WriteCertificateActivity : AppCompatActivity() {
 
         //밑의 하단바 이미지 뷰 클릭했을때 동작
         nav_portfolio.setOnClickListener {
-            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            val intent = Intent(this, PortfolioFullViewActivity::class.java)
             startActivity(intent)
         }
         nav_home.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
         nav_certificate.setOnClickListener {
-            val intent = Intent(this,CertificateViewActivity::class.java)
+            val intent = Intent(this, CertificateViewActivity::class.java)
             startActivity(intent)
         }
 
@@ -125,7 +126,7 @@ class WriteCertificateActivity : AppCompatActivity() {
                         + str_date + "',"+"'"+str_period+"'"+",'"+str_etc+"'"+",'"+str_url+"');")
                 certificatesqlitedb.close()
 
-                Toast.makeText(this,"$str_name 자격증이 기입되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"작성 완료", Toast.LENGTH_SHORT).show()
 
                 //추가한 자격증 내역을 CertificateViewActivity에서 확인할 수 있음
                 val intent = Intent(this,CertificateViewActivity::class.java)

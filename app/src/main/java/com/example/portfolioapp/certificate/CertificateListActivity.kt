@@ -10,10 +10,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.portfolioapp.certprizeFullView.CertificateViewActivity
 import com.example.portfolioapp.R
 import com.example.portfolioapp.portCalendar.PortfolioCalendarViewActivity
 import com.example.portfolioapp.home.HomeActivity
+import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 
 class CertificateListActivity : AppCompatActivity() {
 
@@ -60,7 +62,7 @@ class CertificateListActivity : AppCompatActivity() {
         nav_certificate = findViewById(R.id.nav_certificate)
 
         nav_portfolio.setOnClickListener {
-            val intent = Intent(this, PortfolioCalendarViewActivity::class.java)
+            val intent = Intent(this, PortfolioFullViewActivity::class.java)
             startActivity(intent)
         }
         nav_home.setOnClickListener {
@@ -134,6 +136,8 @@ class CertificateListActivity : AppCompatActivity() {
                 sqlitedb.execSQL("DELETE FROM certificate WHERE name='" + str_certificatename + "';")
                 sqlitedb.close()
                 certificate.close()
+
+                Toast.makeText(this,"삭제 완료", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this, CertificateViewActivity::class.java)
                 startActivity(intent)

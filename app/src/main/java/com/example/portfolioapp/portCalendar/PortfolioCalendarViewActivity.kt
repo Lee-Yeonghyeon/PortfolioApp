@@ -67,9 +67,6 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //뒤로가기
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
 
         // 캘린더뷰 최소, 최대 활성화 날짜 설정
         calendarView.minDate = SimpleDateFormat("yyyyMMdd").parse("20000101").time
@@ -148,11 +145,6 @@ class PortfolioCalendarViewActivity : AppCompatActivity() {
             }
             R.id.action_portfullview -> {
                 val intent = Intent(this, PortfolioFullViewActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-            android.R.id.home ->{
-                val intent = Intent(this,PortfolioFullViewActivity::class.java)
                 startActivity(intent)
                 return true
             }

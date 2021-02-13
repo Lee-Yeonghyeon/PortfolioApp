@@ -16,6 +16,7 @@ import com.example.portfolioapp.certificate.CertificateManager
 import com.example.portfolioapp.certificate.WriteCertificateActivity
 import com.example.portfolioapp.portCalendar.PortfolioCalendarViewActivity
 import com.example.portfolioapp.home.HomeActivity
+import com.example.portfolioapp.portFullView.PortfolioFullViewActivity
 import com.example.portfolioapp.prize.PrizeListActivity
 import com.example.portfolioapp.prize.PrizeManager
 import com.example.portfolioapp.prize.WritePrizeActivity
@@ -40,9 +41,6 @@ class CertificateViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_certificate_view)
 
-        //뒤로가기 버튼
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
 
         //페이지 정보 제공
         supportActionBar?.setTitle("자격증/수상경력")
@@ -53,18 +51,17 @@ class CertificateViewActivity : AppCompatActivity() {
         nav_certificate = findViewById(R.id.nav_certificate)
 
         nav_portfolio.setOnClickListener {
-            val intent = Intent(this,PortfolioCalendarViewActivity::class.java)
+            val intent = Intent(this, PortfolioFullViewActivity::class.java)
             startActivity(intent)
         }
         nav_home.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
         nav_certificate.setOnClickListener {
-            val intent = Intent(this,CertificateViewActivity::class.java)
+            val intent = Intent(this, CertificateViewActivity::class.java)
             startActivity(intent)
         }
-
 
         //certificate table 보여주기
         certificate = CertificateManager(this, "certificate", null, 1)      //CertificateManager의 table 가져오기
@@ -162,11 +159,6 @@ class CertificateViewActivity : AppCompatActivity() {
     //액션바에 뒤로가기 및 자격증,수상경력추가하기 액션 구현
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
-            android.R.id.home -> {
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-                return true
-            }
             R.id.action_write_certificate -> {
                 val intent = Intent(this,WriteCertificateActivity::class.java)
                 startActivity(intent)
